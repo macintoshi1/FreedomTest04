@@ -179,6 +179,7 @@ body.menu-open {
     justify-content: space-between;
     cursor: pointer;
     z-index: 1001;
+    -webkit-tap-highlight-color: transparent; 
 }
 
 .hamburger::before {
@@ -1335,6 +1336,20 @@ body.menu-open {
 
 /* レスポンシブ対応 */
 @media (max-width: 1024px) {
+    .hero-buttons a.btn-primary:hover,
+    .hero-buttons a.btn-primary:active {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        transform: none;
+        box-shadow: 0 5px 15px #55fefe33;
+    }
+
+    .hamburger:hover span,
+    .hamburger:active span {
+        background: var(--primary-color);
+        box-shadow: none;
+    }
+
     .access-grid {
         grid-template-columns: 1fr;
         gap: 4rem;
@@ -1461,7 +1476,7 @@ body.menu-open {
     }
 
     .hero-buttons {
-        right: calc(0.5rem + 40px);
+        right: calc(0.5rem + 32px);
     }
 
     .btn-primary {
@@ -1503,7 +1518,7 @@ body.menu-open {
     }
 
     .hero-info {
-        transform: translateY(15vh);  /* 下に移動 */
+        transform: translateY(12vh);  /* 下に移動 */
     }
 
     .hero .date {
