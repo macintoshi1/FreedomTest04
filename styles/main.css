@@ -1409,17 +1409,11 @@ body.menu-open {
     }
 
     .hero-content {
-        /* max-width: 100%; */
         padding: 1rem;
-        /* height: 110vh;
-        justify-content: center; */
         padding-top: 100px;
-        /* max-width: 100%; */
     }
 
     .hero-logo {
-        /* width: 80%; */
-        /* max-width: 600px; */
         margin-bottom: 2rem;
     }
 
@@ -1607,6 +1601,30 @@ body.menu-open {
     }
 
     /* 共通セクション */
+    .about,
+    .area,
+    .lineup,
+    .ticket,
+    .extras,
+    .access {
+        padding: 4rem 0;  /* 左右のパディングを0に */
+    }
+
+    .about-content,
+    .area-content,
+    .lineup-content,
+    .ticket-content,
+    .extras-content,
+    .access-content {
+        padding: 0 1rem;  /* 左右に1remのパディング */
+    }
+
+    .area-grid,
+    .lineup-grid,
+    .extras-grid {
+        padding: 0 1rem;  /* 左右に1remのパディング */
+    }
+
     .lineup-grid,
     .extras-grid {
         grid-template-columns: 1fr;
