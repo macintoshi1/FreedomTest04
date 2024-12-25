@@ -109,6 +109,7 @@ function smoothScroll(targetElement) {
     // 背景画像とロゴの制御
     const heroBackground = document.querySelector('.hero-background');
     const heroLogo = document.querySelector('.hero-logo');
+    const heroInfo = document.querySelector('.hero-info'); 
     
     // 背景画像のURL取得
     const bgImage = getComputedStyle(heroBackground)
@@ -121,6 +122,11 @@ function smoothScroll(targetElement) {
     img.onload = () => {
         // ロゴにアニメーション用クラスを追加
         heroLogo.classList.add('reveal');
+
+            // ロゴのアニメーション完了を検知して Hero-Info のアニメーションを開始
+    heroLogo.addEventListener('animationend', () => {
+        heroInfo.classList.add('reveal');
+    });
     };
     
     // 背景画像の読み込みを開始
