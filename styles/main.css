@@ -1478,23 +1478,22 @@ body.menu-open {
     }
 
     .hero-logo {
-        width: min(80vw, 400px);  /* ビューポート幅の80%（最大400px） */
+        width: min(80vw, 400px);
         margin-bottom: 2rem;
-        transform: translateY(-15vh); 
-        opacity: 0;
-        filter: blur(10px);
-        transform: scale(1.2);  /* スケールの初期値 */
+        position: relative;
+        top: -15vh;
     }
-
+    
     .hero-logo.reveal {
-        animation: spLogoReveal 5s ease forwards;  /* スマホ用の新しいアニメーション */
+        animation: logoReveal 5s ease forwards;
     }
+    
 
-    @keyframes spLogoReveal {
+    @keyframes logoReveal {
         to {
             opacity: 1;
             filter: blur(0);
-            transform: translateY(-15vh) scale(1.0);  /* translateYを維持しながらscaleのみ変更 */
+            transform: scale(1);
         }
     }
 
