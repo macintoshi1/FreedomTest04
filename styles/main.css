@@ -590,6 +590,16 @@ body.menu-open {
     max-height: 120px;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.lineup-announcement.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 伸びるグラデーション背景 */
@@ -662,7 +672,7 @@ body.menu-open {
     min-height: calc(100vh - 200px);  /* ヘッダーとパディングを考慮 */
 }
 
-.ticket-announcement {
+/* .ticket-announcement {
     text-align: center;
     padding: 4rem;
     padding-top: 0;
@@ -671,6 +681,19 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     gap: 4rem;  
+} */
+
+.ticket-announcement {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.ticket-announcement.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .ticket-header {
@@ -778,7 +801,7 @@ body.menu-open {
 }
 
 .venue-info h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 0.3rem;  /* 下マージンを0.3remに縮小 */
     color: var(--text-color);
     font-weight: bold;
