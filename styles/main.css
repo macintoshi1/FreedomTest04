@@ -356,8 +356,10 @@ body.menu-open {
     opacity: 0;
     filter: blur(10px);
     transform: scale(1.2);
-    animation: logoReveal 3s ease forwards;
-    animation-delay: 1s; /* 背景読み込みを待つ時間 */
+}
+
+.hero-logo.reveal {
+    animation: logoReveal 2s ease forwards;
 }
 
 @keyframes logoReveal {
