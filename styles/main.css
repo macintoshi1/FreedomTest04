@@ -1457,11 +1457,11 @@ body.menu-open {
 
     .hamburger {
         display: flex;  /* ブレイクポイント以下でflex */
-        right: 1rem;
+        right: 0.5rem;
     }
 
     .hero-buttons {
-        right: calc(1.2rem + 35px);
+        right: calc(0.5rem + 40px);
     }
 
     .btn-primary {
@@ -1482,7 +1482,7 @@ body.menu-open {
         width: min(80vw, 400px);
         margin-bottom: 2rem;
         position: relative;
-        top: 0;
+        top: -2vh;
     }
     
     .hero-logo.reveal {
