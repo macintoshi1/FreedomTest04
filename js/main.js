@@ -105,4 +105,26 @@ function smoothScroll(targetElement) {
         observer.observe(element);  // 監視開始
     });
     // ここまで追加 ========================
+    // スクロールアニメーション用の監視設定の後に追加
+    // 背景画像とロゴの制御
+    const heroBackground = document.querySelector('.hero-background');
+    const heroLogo = document.querySelector('.hero-logo');
+    
+    // 背景画像のURL取得
+    const bgImage = getComputedStyle(heroBackground)
+        .backgroundImage.match(/url\(['"]?(.*?)['"]?\)/)[1];
+    
+    // 新しい Image オブジェクトを作成
+    const img = new Image();
+    
+    // 画像読み込み完了時の処理
+    img.onload = () => {
+        // ロゴにアニメーション用クラスを追加
+        heroLogo.classList.add('reveal');
+    };
+    
+    // 背景画像の読み込みを開始
+    img.src = bgImage;
+    
+
 })();
