@@ -1470,11 +1470,12 @@ body.menu-open {
 
     .hero-content {
         height: 110vh;
-        padding: 0 1rem;  /* 左右のパディングのみ設定 */
+        padding: 0 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;  /* 上下中央揃え */
-        align-items: center;      /* 左右中央揃え */
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-20vh);  /* シンプルに上にずらす */
     }
 
     .hero-logo {
