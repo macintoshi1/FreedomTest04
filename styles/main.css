@@ -121,6 +121,11 @@ body.menu-open {
     font-size: 1.2rem;
     padding: 1rem;
     color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .nav-pc-menu.active a {
@@ -141,16 +146,36 @@ body.menu-open {
     width: 100%;
 }
 
-.nav a {
+/* .nav a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 0.8rem;
     transition: color 0.3s ease;
     font-weight: bold;
     position: relative;
+} */
+
+/* .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+} */
+
+/* .nav a:hover::after {
+    width: 100%;
+} */
+
+.nav-pc-menu a:hover {
+    transform: scale(1.15);  /* ホバー時に1.15倍に拡大 */
 }
 
-.nav a::after {
+.nav-pc-menu a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -162,7 +187,7 @@ body.menu-open {
     transform: translateX(-50%);
 }
 
-.nav a:hover::after {
+.nav-pc-menu a:hover::after {
     width: 100%;
 }
 
@@ -328,6 +353,19 @@ body.menu-open {
     width: min(80vw, 600px);
     height: auto;
     margin-bottom: 2rem;
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.2);
+    animation: logoReveal 3s ease forwards;
+    animation-delay: 1s; /* 背景読み込みを待つ時間 */
+}
+
+@keyframes logoReveal {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
 }
 
 .hero h1 {
