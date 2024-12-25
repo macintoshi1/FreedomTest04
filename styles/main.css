@@ -334,7 +334,7 @@ body.menu-open {
 }
 
 .hero-logo.reveal {
-    animation: logoReveal 2s ease forwards;
+    animation: logoReveal 5s ease forwards;
 }
 
 @keyframes logoReveal {
