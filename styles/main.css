@@ -499,19 +499,19 @@ body.menu-open {
 
 .area-item {
     position: relative;
-    padding: 2.5rem;
+    height: 500px;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    height: 100%;
+    overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .area-item .image-container {
     width: 100%;
-    height: 300px;  /* 固定の高さ */
+    height: 50%;  /* 固定の高さ */
     overflow: hidden;  /* はみ出た部分を隠す */
     position: relative;
+    border: none;  /* 枠線を削除 */
 }
 
 .area-item:nth-child(1) {
@@ -542,8 +542,10 @@ body.menu-open {
 }
 
 .area-text {
+    height: 50%;
+    padding: 2rem;
+    background: var(--gradient-purple-0deg); 
     color: white;
-    padding: 1.5rem;
 }
 
 .area-text h3 {
@@ -568,21 +570,6 @@ body.menu-open {
 .area-item:hover img {
     transform: scale(1.1);
 }
-
-/* .area h2 {
-    font-size: 4rem;
-    margin-bottom: 4rem;
-    bacground: var(--gradient-purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-} */
-
-/* .area h2::after {
-    height: 4px;
-    background: var(--gradient-cyan);
-    width: 100px;
-} */
 
 /* LINE UPセクション */
 .lineup-content {
@@ -1465,11 +1452,6 @@ body.menu-open {
         display: block;
     }
 
-
-    /* .hamburger {
-        right: 1.2rem;
-    } */
-
     .hamburger {
         display: flex;  /* ブレイクポイント以下でflex */
         right: 0.5rem;
@@ -1497,7 +1479,7 @@ body.menu-open {
         width: min(80vw, 400px);
         margin-bottom: 2rem;
         position: relative;
-        top: -2vh;
+        top: -5vh;
     }
     
     .hero-logo.reveal {
@@ -1519,7 +1501,7 @@ body.menu-open {
 
     .hero-info {
         position: relative;
-        top: 10vh; 
+        top: -5vh; 
     }
 
     .hero .date {
@@ -1553,16 +1535,8 @@ body.menu-open {
     .concept {
         font-size: 1.2rem;
         line-height: 1.8;
+        text-align: center;
         padding: 0 1rem;  /* 左右の余白を追加 */
-        max-width: 100%;  /* 幅を制御 */
-        word-break: keep-all;  /* 単語の途中での改行を防ぐ */
-        overflow-wrap: break-word;  /* 長い単語は必要に応じて折り返す */
-        text-align: justify;  /* 文章を両端揃えに */
-    }
-
-    /* 日本語の改行位置を調整 */
-    .concept br {
-        display: none;  /* PCで入れた改行を一旦解除 */
     }
 
     .features {
@@ -1605,30 +1579,28 @@ body.menu-open {
     }
 
     .area-item {
-        height: 500px;  /* 固定の高さ */
+        height: 400px;  /* 固定の高さ */
     }
     
     .area-item .image-container {
-        height: 200px;
+        height: 50%;
     }
 
     .area-text {
-        height: calc(100% - 200px);
+        height: 50%;
+        padding: 1.5rem;
         overflow-y: auto;  /* 縦方向にスクロール可能 */
         -webkit-overflow-scrolling: touch;  /* iOSでのスムーズスクロール */
-        padding: 1.5rem;
     }
     
     .area-text h3 {
         font-size: 1.5rem;
         margin-bottom: 0.8rem;
-        color: white;
     }
     
     .area-text p {
         font-size: 0.95rem;
         line-height: 1.8;
-        color: rgba(255, 255, 255, 0.9);  /* テキストを少し柔らかく */
     }
 
     /* LINE UPセクション; */
