@@ -1475,7 +1475,7 @@ body.menu-open {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateY(-20vh);  /* シンプルに上にずらす */
+        transform: translateY(-10vh);  /* シンプルに上にずらす */
     }
 
     .hero-logo {
