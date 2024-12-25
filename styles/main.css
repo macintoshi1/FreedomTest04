@@ -1518,12 +1518,13 @@ body.menu-open {
     }
 
     .hero-info {
-        transform: translateY(15vh);  /* 下に移動 */
+        position: relative;
+        top: 10vh; 
     }
 
     .hero .date {
         font-size: 1.2rem;
-        margin-top: 2rem;
+        margin-top: 0;
     }
 
     .hero .location {
