@@ -1475,24 +1475,29 @@ body.menu-open {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateY(-10vh);  /* シンプルに上にずらす */
     }
 
     .hero-logo {
         width: min(80vw, 400px);  /* ビューポート幅の80%（最大400px） */
         margin-bottom: 2rem;
+        transform: translateY(-15vh); 
     }
 
     .hero h1 {
         font-size: 2.5rem;
     }
 
+    .hero-info {
+        transform: translateY(15vh);  /* 下に移動 */
+    }
+
     .hero .date {
         font-size: 1.2rem;
+        margin-top: 2rem;
     }
 
     .hero .location {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .hero-buttons {
