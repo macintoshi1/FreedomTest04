@@ -640,15 +640,6 @@ body.menu-open {
         transform: scaleX(1);
         transform-origin: left;
     }
-    /* 50.1% {
-        transform: scaleX(1);
-        transform-origin: right;
-    }
-    100% {
-        transform: scaleX(0.4);
-        transform-origin: right;
-    } */
-
 }
 
 .lineup-coming-soon {
@@ -1641,7 +1632,7 @@ body.menu-open {
         height: 140px;  /* コンテナ自体の高さは確保 */
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         padding: 1.5rem;
     }
@@ -1659,8 +1650,10 @@ body.menu-open {
     }
 
     .lineup-coming-soon {
-        font-size: 1.8rem;  /* フォントサイズを縮小 */
+        font-size: 1.5rem;  /* フォントサイズを縮小 */
         margin-bottom: 0.5rem;  /* 下マージンを追加 */
+        position: relative;
+        z-index: 2;
     }
 
     .lineup-message {
