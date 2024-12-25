@@ -1628,13 +1628,31 @@ body.menu-open {
 
     /* LINE UPセクション; */
     .lineup-announcement {
-        background: #2C3E50;  /* transport-cardと同じスペースグレー */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        background: transparent;  /* 半透明の背景を削除 */
+        box-shadow: none;  /* 影も削除 */
+        max-height: 100px;  /* 高さを少し抑える */
+        padding: 0 1.5rem;  /* 左右の余白も少し縮小 */
+    }
+
+    /* グラデーションバーを細く */
+    .lineup-announcement::before {
+        height: 80%;  /* バーの高さを80%に */
+        top: 50%;  /* 上から50%の位置に */
+        transform: translateY(-50%);  /* 中央揃え */
     }
 
     .lineup-coming-soon,
     .lineup-message {
-        color: #fff;  /* テキストを白に */
+        color: black;  /* スマホでも黒字を維持 */
+    }
+
+    .lineup-coming-soon {
+        font-size: 1.8rem;  /* フォントサイズを縮小 */
+        margin-bottom: 0.3rem;  /* 下マージンを追加 */
+    }
+
+    .lineup-message {
+        font-size: 0.9rem;  /* フォントサイズを縮小 */
     }
 
     /* ACCESSセクション */
