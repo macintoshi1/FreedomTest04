@@ -1349,6 +1349,66 @@ body.menu-open {
 
 /* 768px以下の設定 */
 @media (max-width: 768px) {
+   /* 共通セクション */
+   .about,
+   .area,
+   .lineup,
+   .ticket,
+   .extras,
+   .access {
+       padding: 4rem 1rem;
+   }
+
+   .about h2,
+   .area h2,
+   .lineup h2,
+   .ticket h2,
+   .extras h2,
+   .access h2 {
+       font-size: 2.5rem;
+   }
+
+   .about-content,
+   .area-content,
+   .lineup-content,
+   .ticket-content,
+   .extras-content,
+   .access-content {
+       padding: 0 1rem;  /* 左右に1remのパディング */
+   }
+
+   .area-grid,
+   .lineup-grid,
+   .extras-grid {
+       padding: 0 1rem;  /* 左右に1remのパディング */
+   }
+
+   .lineup-grid,
+   .extras-grid {
+       grid-template-columns: 1fr;
+       gap: 2rem;
+   }
+
+   .lineup-item,
+   .extras-item {
+       height: 300px;
+   }
+
+   /* .lineup h2,
+   .extras h2 {
+       font-size: 2.5rem;
+   } */
+
+   .lineup-text h3,
+   .extras-text h3 {
+       font-size: 1.3rem;
+   }
+
+   .lineup-text p,
+   .extras-text p {
+       font-size: 0.9rem;
+   }
+
     /* 全体的なスペーシング調整 */
     .section-padding {
         padding: 4rem 1rem;
@@ -1454,9 +1514,10 @@ body.menu-open {
     }
 
     .features {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 2rem;
+        grid-template-columns: 1fr;  /* 1列に */
+        gap: 2rem;
+        margin: 2rem auto;  /* 中央寄せ */
+        max-width: 300px;  /* コンテンツ幅を制限 */
     }
 
     .feature {
@@ -1465,9 +1526,8 @@ body.menu-open {
     }
     
     .feature-item {
-        width: 100%;
-        max-width: 300px;
-        padding: 1.5rem;
+        width: 100%;  /* 親要素いっぱいに */
+        margin: 0 auto;  /* 中央寄せ */
     }
 
     .feature-icon {
@@ -1484,22 +1544,27 @@ body.menu-open {
         font-size: 0.95rem;
     }
 
-    .area-item {
-        position: relative;
-        padding: 2.5rem;
-        display: flex;
-        flex-direction: column;
+    .area-grid {
+        grid-template-columns: 1fr;  /* 1列に変更 */
         gap: 2rem;
-        height: 100%;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        background-color: var(--space-gray);  /* スペースグレーを使用 */
+        padding: 1rem;
+        max-width: 500px;  /* コンテンツ幅を制限 */
+        margin: 0 auto;  /* 中央寄せ */
+    }
+
+    .area-item {
+        height: 500px;  /* 固定の高さ */
     }
     
+    .area-item .image-container {
+        height: 200px;
+    }
 
     .area-text {
+        height: calc(100% - 200px);
+        overflow-y: auto;  /* 縦方向にスクロール可能 */
+        -webkit-overflow-scrolling: touch;  /* iOSでのスムーズスクロール */
         padding: 1.5rem;
-        background: transparent;  /* 元の背景を透明に */
-        color: white;
     }
     
     .area-text h3 {
@@ -1566,23 +1631,6 @@ body.menu-open {
         min-height: 300px;
     }
 
-    .about,
-    .area,
-    .lineup,
-    .ticket,
-    .extras,
-    .access {
-        padding: 4rem 1rem;
-    }
-
-    .about h2,
-    .area h2,
-    .lineup h2,
-    .ticket h2,
-    .extras h2,
-    .access h2 {
-        font-size: 2.5rem;
-    }
 
     .area-item img {
         height: 200px;
@@ -1600,56 +1648,7 @@ body.menu-open {
         font-size: 0.9rem;
     }
 
-    /* 共通セクション */
-    .about,
-    .area,
-    .lineup,
-    .ticket,
-    .extras,
-    .access {
-        padding: 4rem 0;  /* 左右のパディングを0に */
-    }
-
-    .about-content,
-    .area-content,
-    .lineup-content,
-    .ticket-content,
-    .extras-content,
-    .access-content {
-        padding: 0 1rem;  /* 左右に1remのパディング */
-    }
-
-    .area-grid,
-    .lineup-grid,
-    .extras-grid {
-        padding: 0 1rem;  /* 左右に1remのパディング */
-    }
-
-    .lineup-grid,
-    .extras-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .lineup-item,
-    .extras-item {
-        height: 300px;
-    }
-
-    .lineup h2,
-    .extras h2 {
-        font-size: 2.5rem;
-    }
-
-    .lineup-text h3,
-    .extras-text h3 {
-        font-size: 1.3rem;
-    }
-
-    .lineup-text p,
-    .extras-text p {
-        font-size: 0.9rem;
-    }
+ 
 
     /* フッター */
     .footer-content {
