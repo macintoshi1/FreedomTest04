@@ -1469,11 +1469,16 @@ body.menu-open {
     }
 
     .hero-content {
-        padding: 1rem;
-        padding-top: 100px;
+        height: 110vh;
+        padding: 0 1rem;  /* 左右のパディングのみ設定 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* 上下中央揃え */
+        align-items: center;      /* 左右中央揃え */
     }
 
     .hero-logo {
+        width: min(80vw, 400px);  /* ビューポート幅の80%（最大400px） */
         margin-bottom: 2rem;
     }
 
