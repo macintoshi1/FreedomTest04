@@ -1518,7 +1518,7 @@ body.menu-open {
     }
 
     .hero-info {
-        transform: translateY(12vh);  /* 下に移動 */
+        transform: translateY(15vh);  /* 下に移動 */
     }
 
     .hero .date {
@@ -1552,6 +1552,16 @@ body.menu-open {
     .concept {
         font-size: 1.2rem;
         line-height: 1.8;
+        padding: 0 1rem;  /* 左右の余白を追加 */
+        max-width: 100%;  /* 幅を制御 */
+        word-break: keep-all;  /* 単語の途中での改行を防ぐ */
+        overflow-wrap: break-word;  /* 長い単語は必要に応じて折り返す */
+        text-align: justify;  /* 文章を両端揃えに */
+    }
+
+    /* 日本語の改行位置を調整 */
+    .concept br {
+        display: none;  /* PCで入れた改行を一旦解除 */
     }
 
     .features {
