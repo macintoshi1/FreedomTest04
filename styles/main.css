@@ -146,31 +146,6 @@ body.menu-open {
     width: 100%;
 }
 
-/* .nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 0.8rem;
-    transition: color 0.3s ease;
-    font-weight: bold;
-    position: relative;
-} */
-
-/* .nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-} */
-
-/* .nav a:hover::after {
-    width: 100%;
-} */
-
 .nav-pc-menu a:hover {
     transform: scale(1.15);  /* ホバー時に1.15倍に拡大 */
 }
@@ -178,7 +153,7 @@ body.menu-open {
 .nav-pc-menu a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 0.2rem;
     left: 50%;
     width: 0;
     height: 2px;
