@@ -1629,19 +1629,19 @@ body.menu-open {
 
     /* LINE UPセクション; */
     .lineup-announcement {
-        height: 140px;  /* コンテナ自体の高さは確保 */
+        height: 120px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         padding: 1.5rem;
     }
 
     /* グラデーションバーを細く */
     .lineup-announcement::before {
-        height: 95%;  /* バーの高さを80%に */
-        top: 50%;  /* 上から50%の位置に */
-        transform: translateY(-50%);  /* 中央揃え */
+        height: 100%;
+        top: 0;
+        transform: none;
     }
 
     .lineup-coming-soon,
@@ -1652,8 +1652,11 @@ body.menu-open {
     .lineup-coming-soon {
         font-size: 1.5rem;  /* フォントサイズを縮小 */
         margin-bottom: 0.5rem;  /* 下マージンを追加 */
-        background: rgba(255,0,0,0.1);  /* デバッグ用 */
+        color: #000;  /* 明示的に黒を指定 */
+        font-weight: bold;  /* 太字化 */
         min-height: 2rem;  /* 最小の高さを確保 */
+        line-height: 1.2;  /* 行の高さを指定 */
+        height: auto;      /* 高さを自動調整 */
     }
 
     .lineup-message {
