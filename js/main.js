@@ -123,10 +123,9 @@ function smoothScroll(targetElement) {
         // ロゴにアニメーション用クラスを追加
         heroLogo.classList.add('reveal');
 
-            // ロゴのアニメーション完了を検知して Hero-Info のアニメーションを開始
-    heroLogo.addEventListener('animationend', () => {
-        heroInfo.classList.add('reveal');
-    });
+        setTimeout(() => {
+            heroInfo.classList.add('reveal');
+        }, 2000);
     };
     
     // 背景画像の読み込みを開始
