@@ -166,6 +166,31 @@ body.menu-open {
     width: 100%;
 }
 
+/* 言語切り替えボタン */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    margin-left: -1rem;  /* チケットボタンとの間隔 */
+}
+
+.lang-switch a {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;  /* colorのみトランジション */
+    text-decoration: none;
+    display: inline-block;
+}
+
+.lang-switch a:hover {
+    color: var(--secondary-light);  /* ホバー時は文字色のみ変更 */
+}
+
 /* ハンバーガーメニュー */
 .hamburger {
     display: none;
@@ -1012,10 +1037,7 @@ body.menu-open {
     color: var(--text-color);
 }
 
-
-
 /* LINEUP, EXTRASセクション共通 */
-
 .lineup,
 .extras {
     background-color: #000;
@@ -1333,9 +1355,15 @@ body.menu-open {
         display: none;
     }
 
-    /* .hamburger {
+    /* 言語切り替えスイッチ */
+    .header .lang-switch {
+        display: none;  /* PCメニューの言語切り替えを非表示 */
+    }
+
+    .nav-pc-menu .lang-switch {
         display: flex;
-    } */
+        margin-top: 2rem;  /* メニュー項目との間隔 */
+    }
 
     .hamburger {
         display: flex;
