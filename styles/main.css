@@ -1173,6 +1173,12 @@ body.menu-open {
     }
 }
 
+/* EXTRASセクション */
+.extras-text h3 small {
+    font-size: 0.8rem;  /* 1remから0.8remに縮小 */
+    margin-left: 0.3rem;
+}
+
 /* フッター */
 .footer {
     position: relative;  /* 追加 */
@@ -1719,7 +1725,12 @@ body.menu-open {
         font-size: 0.9rem;
     }
 
- 
+    .extras-text h3 small {
+        font-size: 0.6rem;  /* スマホ表示ではさらに小さく */
+        display: block;  /* 改行して表示 */
+        margin-top: 0.1rem;  /* 上部との間隔 */
+        margin-left: 0;  /* 左マージンをリセット */
+    } 
 
     /* フッター */
     .footer-content {
