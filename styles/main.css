@@ -1629,12 +1629,13 @@ body.menu-open {
 
     /* LINE UPセクション; */
     .lineup-announcement {
-        height: 120px;
+        height: 88px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 1.5rem;
+        gap: 0.5rem;
     }
 
     /* グラデーションバーを細く */
@@ -1651,7 +1652,7 @@ body.menu-open {
 
     .lineup-coming-soon {
         font-size: 1.5rem;  /* フォントサイズを縮小 */
-        margin-bottom: 0.5rem;  /* 下マージンを追加 */
+        margin-bottom: 0rem;
         color: #000;  /* 明示的に黒を指定 */
         font-weight: bold;  /* 太字化 */
         min-height: 2rem;  /* 最小の高さを確保 */
