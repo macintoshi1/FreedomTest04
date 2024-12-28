@@ -937,12 +937,11 @@ body.menu-open {
 .ticket-message {
     font-size: 1rem;
     font-weight: bold;
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
     color: var(--text-color);
-    display: inline-block;  /* インライン要素に */
-    min-width: max-content;  /* コンテンツの幅を最小幅に */
-    margin: 0 auto;  /* 中央寄せ */
-    white-space: nowrap;  /* 改行を防ぐ */
+    width: 100%;
+    text-align: center;
+
 }
 
 .ticket-platforms {
