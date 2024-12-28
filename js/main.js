@@ -1,5 +1,5 @@
 function smoothScroll(targetElement) {
-  const headerOffset = 32;
+  const headerOffset = -4;
   const startPosition = window.pageYOffset;
   const targetPosition = targetElement.getBoundingClientRect().top + startPosition - headerOffset;
   const distance = targetPosition - startPosition;
