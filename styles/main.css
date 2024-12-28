@@ -641,6 +641,7 @@ body.menu-open {
     flex-direction: column;
     gap: 2rem;
     /* height: 100%; */
+    min-height: 0;
 }
 
 .news-item {
@@ -652,6 +653,7 @@ body.menu-open {
     border: 1px solid rgba(255, 255, 255, 0.08);  /* より控えめなボーダー */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 控えめな影 */
     transition: all 0.3s ease;  /* ホバー効果用 */
+    flex-shrink: 0;
 }
 
 .news-item:hover {
