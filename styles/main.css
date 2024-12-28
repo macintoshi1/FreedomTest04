@@ -649,10 +649,9 @@ body.menu-open {
     background: #2f2f32;  /* マットなスペースグレー */
     border-radius: 10px;
     backdrop-filter: blur(12px);
-    height: 150px;
+    height: 140px;
     overflow-y: auto;
-    /* border: 1px solid rgba(255, 255, 255, 0.08);   */
-    border: 2px solid red;  /* デバッグ用 */
+    border: 1px solid rgba(255, 255, 255, 0.08);  
     position: relative;     /* 位置の基準点を設定 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 控えめな影 */
     transition: all 0.3s ease;  /* ホバー効果用 */
@@ -687,7 +686,6 @@ body.menu-open {
 .news-text {
     position: relative;  /* 追加：コンテンツの配置の基準点を設定 */
     top: 0;             /* 追加：上端に合わせる */
-    border: 2px solid blue;  /* デバッグ用 */
     height: 100%;
 }
 
