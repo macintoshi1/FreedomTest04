@@ -688,6 +688,7 @@ body.menu-open {
     position: relative;  /* 追加：コンテンツの配置の基準点を設定 */
     top: 0;             /* 追加：上端に合わせる */
     border: 2px solid blue;  /* デバッグ用 */
+    height: 100%;
 }
 
 .news-text h3 {
