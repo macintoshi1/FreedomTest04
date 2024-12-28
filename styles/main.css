@@ -695,16 +695,17 @@ body.menu-open {
     color: var(--primary-color);
     font-size: 1rem;
     margin-bottom: 1rem;
+    display: flex;      /* flexboxを使用 */
+    align-items: center;  /* 上下中央揃え */
 }
 
 .news-text h3::before {
     content: '';
-    display: inline-block;
+    display: block;
     width: 2px;
-    height: 1em;  /* h3の文字の高さに合わせる */
+    height: 1.2em;  /* h3の文字の高さに合わせる */
     background: var(--primary-color);
     margin-right: 1rem;
-    vertical-align: middle;  /* または必要に応じて調整 */
 }
 
 .news-text p {
@@ -1344,12 +1345,17 @@ body.menu-open {
     color: white;
 }
 
-.news-text h3,
 .lineup-text h3,
 .extras-text h3 {
     font-size: 1.5rem;
     margin-bottom: 0.8rem;
     color: white;
+}
+
+.news-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: white; 
 }
 
 .news-text p,
