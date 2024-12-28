@@ -74,48 +74,6 @@ body.menu-open {
 }
 
 
-
-/* ロゴ設定 */
-.nav-logo {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-}
-
-.nav-logo-img {
-    width: 320px;
-    height: auto;
-    object-fit: contain;
-}
-
-
-.pc-only {
-    display: block;
-}
-
-.sp-only {
-    display: none;
-}
-
-/* PCメニュー設定 */
-.nav-pc-menu,
-.date {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    letter-spacing: .05em;
-}
-
-/* .nav-pc-menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem;
-    gap: 1rem;
-    width: 100%;
-} */
-
-
 .nav-pc-menu {
     position: fixed;
     top: 0;
@@ -238,32 +196,78 @@ body.menu-open {
     transform: translateX(-50%);
 }
 
+/* ロゴ設定 */
+.nav-logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.nav-logo-img {
+    width: 320px;
+    height: auto;
+    object-fit: contain;
+}
+
+.pc-only {
+    display: block;
+}
+
+.sp-only {
+    display: none;
+}
+
+/* PCメニュー設定 */
+.nav-pc-menu,
+.date {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    letter-spacing: .05em;
+}
+
+/* .nav-pc-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+} */
+
+
+
+
+.nav-right {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:  1rem;  /* 均等な間隔 */
+}
 
 /* 言語切り替えボタン */
 
-.nav-pc-menu .lang-switch {
-    display: flex;
-    margin-top: 2rem;  /* メニュー項目との間隔 */
-}
-
 .lang-switch {
     display: flex;
-    align-items: center;
-    margin-left: -1rem;  /* チケットボタンとの間隔 */
+    align-self: center;
+    margin-bottom: -0.2rem; 
 }
 
 .lang-switch a {
     background: transparent;
     border: none;
     color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: 0;
     border-radius: 50px;
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
     transition: color 0.3s ease;  /* colorのみトランジション */
     text-decoration: none;
-    display: inline-block;
 }
 
 
@@ -272,77 +276,14 @@ body.menu-open {
     color: var(--secondary-light);  /* ホバー時は文字色のみ変更 */
 }
 
-/* ハンバーガーメニュー */
-.hamburger {
-    display: flex;
-    position: absolute;
-    right: 2.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 25px;
-    height: 20px;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 1001;
-    -webkit-tap-highlight-color: transparent; 
-}
-
-
-
-.hamburger::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    /* background: rgba(255,0,0,0.1); */  /* デバッグ用 */
-}
-
-.hamburger span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: var(--primary-color);
-    transform-origin: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* ハンバーガーメニューのアニメーション */
-.hamburger:hover span {
-    background: var(--secondary-light);
-    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-.hero {
-    height: 110vh;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    /* overflow: hidden;
-    color: white; */
-}
 
 /* チケットボタン */
 .hero-buttons {
-    position: absolute;
+    /* position: absolute;
     right: calc(2rem + 45px);
-    /* right: 2rem; */
+    right: 2rem;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
     display: flex;
     gap: 1rem;
 }
@@ -392,6 +333,71 @@ body.menu-open {
 
 .hero-buttons a::after {
     display: none;
+}
+
+
+
+/* ハンバーガーメニュー */
+.hamburger {
+    display: flex;
+    /* position: absolute; */
+    /* right: 2.2rem; */
+    /* top: 50%;
+    transform: translateY(-50%); */
+    width: 25px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1001;
+    -webkit-tap-highlight-color: transparent; 
+}
+
+
+/* 
+.hamburger::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+} */
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--primary-color);
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ハンバーガーメニューのアニメーション */
+.hamburger:hover span {
+    background: var(--secondary-light);
+    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.hero {
+    height: 110vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    /* overflow: hidden;
+    color: white; */
 }
 
 
@@ -610,6 +616,48 @@ body.menu-open {
 .feature-item:hover {
     transform: translateY(-15px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* NEWSセクション */
+.news {
+    padding: 6rem 2rem;
+    background: #000;
+}
+
+.news h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.news-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.news-item {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+}
+
+.news-text h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.news-text p {
+    color: white;
+    line-height: 1.6;
 }
 
 /* AREAセクション */
