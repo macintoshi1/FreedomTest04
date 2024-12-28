@@ -135,6 +135,7 @@ body.menu-open {
         opacity 0.5s ease,
         background-color 0.5s ease,
         backdrop-filter 0.5s ease;
+    gap: 1rem;
 }
 
 /* .nav-pc-menu.active {
