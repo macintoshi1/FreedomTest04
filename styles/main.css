@@ -1823,13 +1823,12 @@ body.menu-open {
     }
     
     .venue-info {
-        font-size: 1.2rem;
         padding: 2rem;
         width: 90%;
     }
 
     .venue-info h3 {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     .transport-card {
