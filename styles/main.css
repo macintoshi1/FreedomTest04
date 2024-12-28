@@ -649,7 +649,8 @@ body.menu-open {
     background: #2f2f32;  /* マットなスペースグレー */
     border-radius: 10px;
     backdrop-filter: blur(12px);
-    height: 140px;
+    height: 150px;
+    overflow-y: auto;
     /* border: 1px solid rgba(255, 255, 255, 0.08);   */
     border: 2px solid red;  /* デバッグ用 */
     position: relative;     /* 位置の基準点を設定 */
@@ -658,10 +659,29 @@ body.menu-open {
     flex-shrink: 0;
 }
 
+/* スクロールバーのスタイリング（オプション） */
+.news-item::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-item::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.news-item::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
 .news-item:hover {
     background: rgba(50, 50, 55, 0.5);  /* わずかに明るく */
     transform: translateY(-5px);  /* 上に浮かび上がる */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* 影を強調 */
+}
+
+.news-item:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .news-text {
@@ -672,7 +692,7 @@ body.menu-open {
 
 .news-text h3 {
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
