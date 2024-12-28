@@ -930,12 +930,16 @@ body.menu-open {
     font-size: 1.6rem;
     font-weight: bold;
     color: var(--secondary-color);
+    display: inline-block;  /* インライン要素に */
+    min-width: max-content;  /* コンテンツの幅を最小幅に */
 }
 .ticket-message {
     font-size: 1rem;
     font-weight: bold;
     /* margin-top: 1rem; */
     color: var(--text-color);
+    display: inline-block;  /* インライン要素に */
+    min-width: max-content;  /* コンテンツの幅を最小幅に */
 }
 
 .ticket-platforms {
