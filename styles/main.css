@@ -932,6 +932,7 @@ body.menu-open {
     color: var(--secondary-color);
     display: inline-block;  /* インライン要素に */
     min-width: max-content;  /* コンテンツの幅を最小幅に */
+    white-space: nowrap;  /* 改行を防ぐ */
 }
 .ticket-message {
     font-size: 1rem;
@@ -940,6 +941,7 @@ body.menu-open {
     color: var(--text-color);
     display: inline-block;  /* インライン要素に */
     min-width: max-content;  /* コンテンツの幅を最小幅に */
+    white-space: nowrap;  /* 改行を防ぐ */
 }
 
 .ticket-platforms {
