@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +9,33 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <!-- ロゴ部分は同じ -->
+            <div class="nav-logo">
+                <img src="../images/FreedomLogo_1line.png" alt="Freedom Japan Festival" class="nav-logo-img pc-only">
+                <img src="../images/FreedomLogo_3lines (Presentation_16-9)_03.png" alt="Freedom Japan Festival" class="nav-logo-img sp-only">
+            </div>
+            <!-- PCメニュー -->
             <ul class="nav-pc-menu">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about">ABOUT</a></li>
+                <li><a href="#news">NEWS</a></li>
                 <li><a href="#area">AREA</a></li>
                 <li><a href="#lineup">LINEUP</a></li>
                 <li><a href="#ticket">TICKET</a></li>
                 <li><a href="#extras">EXTRAS</a></li>
                 <li><a href="#access">ACCESS</a></li>
             </ul>
-            <div class="hamburger sp-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="hero-buttons">
-                <a href="#ticket" class="btn-primary">Buy Tickets</a>
+            <!-- ハンバーガーメニューアイコン -->
+            <div class="nav-right">
                 <div class="lang-switch">
-                    <a href="../">日本語</a>
+                    <a href="../index.html">日本語</a>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#ticket" class="btn-primary">Buy Ticket</a>
+                </div>
+                <div class="hamburger sp-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </nav>
@@ -36,10 +44,10 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <!-- ロゴ画像は同じ -->
+                <img src="../images/Freedom_logo_Refunk_BGremoved_02.png" alt="Freedom Japan Festival" class="hero-logo">
                 <div class="hero-info"> 
-                    <p class="date">2025.10.25-26</p>
-                    <p class="location">@HEARTLAND ASAGIRI</p>  
+                <p class="date">2025.10.25 Sat - 26 Sun</p>
+                <p class="location">＠Heartland Asagiri</p>  
                 </div>  
             </div>
             <div class="hero-background"></div>
@@ -48,93 +56,153 @@
         <section id="about" class="about">
             <h2>ABOUT</h2>
             <div class="about-content">
+                <!-- <p class="concept">自然と音楽が織りなす、新しい体験の創造。<br>
+                富士山麓で過ごす2日間の特別な時間。</p> -->
                 <p class="concept">
-                    At the foot of Mt. Fuji<br>
-                    In this spectacular location<br>
-                    Through music and art<br>
-                    We create moments of wonder<br>
-                    Providing a space<br>
-                    To envision a free and hopeful<br>
-                    Future for Japan</p>
+                    Against the backdrop of<br>
+                    Mt. Fuji, Japan's iconic symbol,<br>
+                    we bring you the ultimate experience<br>
+                    where nature and music intertwine.<br>
+                    Let's share together the moments<br>
+                    when authentic music moves your heart<br>
+                    as you feel the crystal-clear air<br>
+                    and the pulse of the earth.<br>
+                    <br>
+                    Artists transcending genres<br>
+                    come together to create<br>
+                    an extraordinary space<br>
+                    filled with diverse music.<br>
+                    Share unforgettable moments<br>
+                    with your family, friends,<br>
+                    and loved ones.<br>
+                    <br>
+                    We offer a variety of food<br>
+                    and unique activities<br>
+                    that can only be experienced<br>
+                    at this special location.<br>
+                    <br>
+                    Through exceptional music,<br>
+                    new experiences, and encounters,<br>
+                    we aim to create a Japan<br>
+                    full of freedom and hope.
+                </p>
                 <div class="features">
                     <div class="feature-item">
                         <div class="feature-content">
                             <h3>LIVE STAGE</h3>
-                            <p>Immerse yourself in<br>authentic sound across<br>three unique stages</p>    
+                            <p>Immersive experience with<br>authentic sound on<br>distinctive stages</p>    
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-content">
                             <h3>CAMP AREA</h3>
-                            <p>Expansive campsite with<br>breathtaking views of<br>Mt. Fuji</p>
+                            <p>Vast, nature-rich campsite<br>with views of<br>Mount Fuji</p>
                         </div>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item"">
                         <div class="feature-content">
                             <h3>BOOK VILLAGE</h3>
-                            <p>A luxurious moment with<br>books at our open-air<br>book market</p>    
+                            <p>Ambient Music x<br>Open-air book market for<br>luxurious reading time</p>    
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-content">
                             <h3>FOOD AREA</h3>
-                            <p>Diverse festival cuisine<br>from local delicacies to<br>Asian street food</p>
+                            <p>Diverse festival food<br>featuring street food and<br>Asian cuisine</p>
                         </div>
-                    </div>
+                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- AREA セクション -->
+        <section id="news" class="news">
+            <h2>NEWS</h2>
+            <div class="news-content">
+                <div class="news-grid">
+                    <div class="news-item">
+                        <div class="news-text">
+                            <h3>2025.01.01 Website Launch!!</h3>
+                            <p>The Freedom Japan Festival 2025 website has been launched.</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-text">
+                            <h3>2024.11.30 Event Confirmed!!</h3>
+                            <p>Freedom Japan Festival 2025 has been officially announced.</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="news-item">
+                        <div class="news-text">
+                            <h3>2025.03.01</h3>
+                            <p>2025年3月チケット先行発売開始予定です。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-text">
+                            <h3>2024.03.31</h3>
+                            <p>第一弾出演アーティスト発表まで、もうしばらくお待ちください。</p>
+                        </div>
+                    </div> -->
+
+                    <!-- 必要に応じて news-item を追加 -->
+                </div>
+            </div>
+        </section>
+
         <section id="area" class="area">
             <h2>AREA</h2>
             <div class="area-content">
                 <div class="area-grid">
-                    <!-- AREA セクション -->
                     <div class="area-item">
                         <div class="image-container">
                             <img src="../images/MainStage_02.png" alt="MAIN STAGE">                            
                         </div>
                         <div class="area-text">
                             <h3>MAIN STAGE</h3>
-                            <p>An acoustic stage featuring main acts<br>
-                            Transforms from an open-air daytime venue into an indoor live floor at night</p>
+                            <p>A stage woven by main acts<br>
+                                From a sunlit outdoor stage to<br>
+                                an indoor live floor at night</p>
                         </div>
                     </div>
-
+        
                     <div class="area-item">
                         <div class="image-container">
                             <img src="../images/campsite.jpg" alt="CAMP SITE">                            
                         </div>
                         <div class="area-text">
                             <h3>CAMP SITE</h3>
-                            <p>A vast camping area spread across the grounds<br>
-                            Share special moments with friends in nature</p>
+                            <p>A vast camping area<br>
+                                Share special moments with friends<br>
+                                in the midst of nature</p>
                         </div>
                     </div>
-
+        
                     <div class="area-item">
                         <div class="image-container">
                             <img src="../images/bookvillage.jpg" alt="BOOK VILLAGE">                            
                         </div>
                         <div class="area-text">
                             <h3>BOOK VILLAGE</h3>
-                            <p>A mystical space surrounded by trees<br>
-                            Immerse yourself in books while listening to ambient music</p>
+                            <p>A magical space surrounded by trees<br>
+                                A healing environment for reading<br>
+                                while listening to ambient music</p>
                         </div>
                     </div>
-
+        
                     <div class="area-item">
                         <div class="image-container">
                             <img src="../images/foodarea.jpg" alt="FOOD AREA">                            
                         </div>
                         <div class="area-text">
                             <h3>FOOD AREA</h3>
-                            <p>A culinary journey from Asian street food<br>
-                            to classic festival favorites</p>
+                            <p>From Asian cuisine to classic<br>
+                                street food - a diverse<br>
+                                festival food experience</p>
                         </div>
                     </div>
                 </div>
+                <!-- エリア詳細は後ほど -->
             </div>
         </section>
 
@@ -143,7 +211,7 @@
             <div class="lineup-content">
                 <div class="lineup-announcement">
                     <div class="lineup-coming-soon">COMING SOON...</div>
-                    <div class="lineup-message">Artist negotiations in progress!!</div>
+                    <div class="lineup-message">Artists under negotiations - stay tuned!!</div>
                 </div>
             </div>
         </section>
@@ -154,15 +222,15 @@
                 <div class="ticket-announcement">
                     <div class="ticket-header">
                         <div class="ticket-status">TICKET INFORMATION</div>
-                        <div class="ticket-date">Early Bird Pricing <br>available from March 2025</div>
+                        <div class="ticket-date">Early Bird Sales:<br>March 2025</div>    
                     </div>
-                    <div class="ticket-message">Please wait for<br>ticket sales to begin</div>
+                    <div class="ticket-message">Ticket sales coming soon!<br>Stay tuned!</div>
                     <!-- <div class="ticket-platforms">
                         <p>取り扱いプラットフォーム</p>
                         <div class="platform-logos">
-                            <img src="images/eplus-logo.png" alt="e+" class="coming-soon">
-                            <img src="images/pia-logo.png" alt="チケットぴあ" class="coming-soon">
-                            <img src="images/lawson-logo.png" alt="ローソンチケット" class="coming-soon">
+                            <img src="../images/eplus-logo.png" alt="e+" class="coming-soon">
+                            <img src="../images/pia-logo.png" alt="チケットぴあ" class="coming-soon">
+                            <img src="../images/lawson-logo.png" alt="ローソンチケット" class="coming-soon">
                         </div>
                     </div> -->
                 </div>
@@ -175,44 +243,48 @@
                 <div class="extras-grid">
                     <div class="extras-item">
                         <div class="image-container">
-                            <img src="images/TVGame.jpg" alt="OUTDOOR ARCADE">
+                            <img src="../images/TVGame.jpg" alt="OUTDOOR ARCADE">
                         </div>
                         <div class="extras-text">
                             <h3>OUTDOOR ARCADE</h3>
-                            <p>Enjoy retro gaming in nature<br>
-                                Classic games with legendary soundtracks<</p>
+                            <p>Experience retro gaming in nature<br>
+                                Featuring classic games with iconic soundtracks</p>
                         </div>
                     </div>
 
                     <div class="extras-item">
                         <div class="image-container">
-                            <img src="images/Campfire.jpg" alt="CAMPFIRE">
+                            <img src="../images/Campfire.jpg" alt="CAMPFIRE">
                         </div>
                         <div class="extras-text">
                             <h3>CAMPFIRE</h3>
-                            <p>Special moments in the night forest<br>Gather around the campfire</p>
+                            <p>Share magical moments in the night forest<br>
+                                Gather around the campfire with friends</p>
                         </div>
                     </div>
         
                     <div class="extras-item">
                         <div class="image-container">
-                            <img src="images/FarmExperience.png" alt="FARM EXPERIENCE">
+                            <img src="../images/FarmExperience.png" alt="FARM EXPERIENCE">
                         </div>
                         <div class="extras-text">
                             <h3>FARM EXPERIENCE<small>(Optional)</small></h3>
-                            <p>Milk a cow + Make butter from fresh milk<br>*Additional fee required</p>
+                            <p>Try milking cows and make your own butter<br>
+                                *Additional fee required</p>
                         </div>
                     </div>
 
                     <div class="extras-item">
                         <div class="image-container">
-                            <img src="images/TrailRun.jpg" alt="TRAIL RUN">
+                            <img src="../images/TrailRun.jpg" alt="TRAIL RUN">
                         </div>
                         <div class="extras-text">
                             <h3>OTHERS...</h3>
-                            <p>More nature experiences<br>currently in planning</p>
+                            <p>More exciting nature activities<br>
+                                coming soon</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -223,9 +295,9 @@
                  <!-- 会場情報 -->
                 <div class="venue-info">
                     <div class="venue-header">
-                        <span class="venue-label">Venue</span>
-                        <h3>HEARTLAND ASAGIRI</h3>
-                        <p class="venue-address">228 Nehara, Fujinomiya, Shizuoka</p>
+                        <span class="venue-label">VENUE</span>
+                        <h3>Hearland Asagiri</h3>
+                        <p class="venue-address">228 Nehara, Fujinomiya, Shizuoka, Japan</p>
                     </div>
                 </div>
 
@@ -247,21 +319,21 @@
                             <div class="route-group">
                                 <h5>From Tomei Expressway</h5>
                                 <ul>
-                                    <li>➡︎➡︎About 1 hour from Fuji Interchange</li>
-                                    <li>➡︎Take Fujinomiya Bypass after exit</li>
-                                    <li>➡︎Continue straight for 40 min</li>
-                                    <li>➡︎Turn right at Route 8 entrance, then left after 1km</li>
+                                    <li>➡︎About 1 hour drive from Fuji IC</li>
+                                    <li>➡︎Take Fujinomiya Bypass after exiting Fuji IC</li>
+                                    <li>➡︎Continue straight for about 40 minutes after the bypass</li>
+                                    <li>➡︎Turn right near Route 8 entrance, then left after 1km</li>
                                 </ul>
-                                <p class="route-note">*Follow the main road until just before arrival</p>
+                                <p class="route-note">*Simply follow the main road after exiting the IC until the final turns</p>
                             </div>
                             
                             <!-- 中央自動車道ルート -->
                             <div class="route-group">
                                 <h5>From Chuo Expressway</h5>
                                 <ul>
-                                    <li>➡︎About 1 hour from Kawaguchiko IC</li>
+                                    <li>➡︎About 1 hour drive from Kawaguchiko IC</li>
                                     <li>➡︎Via Fuji Panorama Line (Route 139)</li>
-                                    <li>➡︎Turn left at Route 8 entrance, then left after 1km</li>
+                                    <li>➡︎Turn left near Route 8 entrance, then left after 1km</li>
                                 </ul>
                             </div>
                         </div>
@@ -275,10 +347,10 @@
                         <div class="transport-content">
                             <h4>By Public Transport</h4>
                             <ul>
-                                <li>➡︎Take bus bound for Asagiri from Shin-Fuji Station</li>
+                                <li>➡︎Take the bus bound for Asagiri area from Shin-Fuji Station (Shinkansen)</li>
                                 <li>➡︎Get off at "Route 8 Entrance" bus stop</li>
                             </ul>
-                            <p class="transport-note">*Access from Shin-Fuji Station is most convenient</p>
+                            <p class="transport-note">*Shin-Fuji Station offers the most convenient access</p>
                         </div>
                     </div>
                 </div>
@@ -288,20 +360,21 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <img src="images/FreedomLogo_3lines (Presentation_16-9)_03.png" alt="Freedom Japan Festival" class="footer-logo">
+            <img src="../images/FreedomLogo_3lines (Presentation_16-9)_03.png" alt="Freedom Japan Festival" class="footer-logo">
             <nav class="footer-nav">
                 <a href="#home">HOME</a>
                 <a href="#about">ABOUT</a>
+                <a href="#news">NEWS</a>
                 <a href="#area">AREA</a>
                 <a href="#lineup">LINEUP</a>
                 <a href="#ticket">TICKET</a>
-                <a href="#ticket">EXTRAS</a>
+                <a href="#extras">EXTRAS</a>
                 <a href="#access">ACCESS</a>
             </nav>
         </div>
         <p class="copyright">© 2025 Freedom Japan Festival. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
