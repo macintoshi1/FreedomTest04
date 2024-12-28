@@ -619,11 +619,6 @@ body.menu-open {
 }
 
 /* NEWSセクション */
-.news {
-    padding: 6rem 2rem;
-    background: #000;
-}
-
 .news h2 {
     text-align: center;
     color: var(--primary-color);
@@ -634,25 +629,53 @@ body.menu-open {
 .news-content {
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 8rem;  /* または必要な値 */
+    min-height: 400px;
+    height: auto;
 }
 
 .news-grid {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    height: 100%;
 }
 
 .news-item {
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: #2f2f32;  /* マットなスペースグレー */
     border-radius: 10px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    height: 140px;
+    border: 1px solid rgba(255, 255, 255, 0.08);  /* より控えめなボーダー */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 控えめな影 */
+    transition: all 0.3s ease;  /* ホバー効果用 */
+}
+
+.news-item:hover {
+    background: rgba(50, 50, 55, 0.5);  /* わずかに明るく */
+    /* または background: #323237; */
+}
+
+.news-text {
+    position: relative;  /* 追加：コンテンツの配置の基準点を設定 */
+    top: 0;             /* 追加：上端に合わせる */
 }
 
 .news-text h3 {
     color: var(--primary-color);
     font-size: 1.2rem;
     margin-bottom: 1rem;
+}
+
+.news-text h3::before {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1em;  /* h3の文字の高さに合わせる */
+    background: var(--primary-color);
+    margin-right: 1rem;
+    vertical-align: middle;  /* または必要に応じて調整 */
 }
 
 .news-text p {
@@ -917,6 +940,27 @@ body.menu-open {
     opacity: 0.8;  /* ホバー時に少し明るく */
 }
 
+.extras-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: white;
+    position: relative;
+    padding-left: 1rem;  /* 縦線分の余白 */
+}
+
+
+
+.extras-text h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 1.2em;  /* 文字の高さに合わせる */
+    background-color: var(--primary-color);
+}
+
 .access-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1097,9 +1141,12 @@ body.menu-open {
 }
 
 /* 共通セクションスタイル */
+.about,
+.news,
 .area,
 .lineup,
 .ticket,
+.extras,
 .access {
     position: relative;
     z-index: 2;
@@ -1139,9 +1186,9 @@ body.menu-open {
     background-color: #FFF;
 }
 
-.lineup {
+/* .lineup {
     background-color: #FFF;
-}
+} */
 
 .ticket {
     background-color: var(--background-color);
@@ -1153,6 +1200,7 @@ body.menu-open {
 
 /* 共通見出しスタイル */
 .about h2,
+.news h2,
 .area h2,
 .lineup h2,
 .ticket h2,
@@ -1171,7 +1219,8 @@ body.menu-open {
     color: var(--text-color);
 }
 
-/* LINEUP, EXTRASセクション共通 */
+/* NEWS,LINEUP, EXTRASセクション共通 */
+.news,
 .lineup,
 .extras {
     background-color: #000;
@@ -1184,6 +1233,7 @@ body.menu-open {
     align-items: center;
 }
 
+.news h2,
 .lineup h2,
 .extras h2 {
     font-size: 3rem;
@@ -1193,6 +1243,7 @@ body.menu-open {
     position: relative;
 }
 
+.news h2::after,
 .lineup h2::after,
 .extras h2::after {
     content: '';
@@ -1205,6 +1256,7 @@ body.menu-open {
     background-color: var(--primary-color);
 }
 
+.news-content,
 .lineup-content,
 .extras-content {
     width: 100%;
@@ -1251,6 +1303,7 @@ body.menu-open {
     transform: scale(1.1);
 }
 
+.news-text,
 .lineup-text,
 .extras-text {
     position: absolute;
@@ -1262,6 +1315,7 @@ body.menu-open {
     color: white;
 }
 
+.news-text h3,
 .lineup-text h3,
 .extras-text h3 {
     font-size: 1.5rem;
@@ -1269,25 +1323,7 @@ body.menu-open {
     color: white;
 }
 
-.extras-text h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    color: white;
-    position: relative;
-    padding-left: 1rem;  /* 縦線分の余白 */
-}
-
-.extras-text h3::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 1.2em;  /* 文字の高さに合わせる */
-    background-color: var(--primary-color);
-}
-
+.news-text p,
 .lineup-text p,
 .extras-text p {
     font-size: 0.95rem;
@@ -1295,6 +1331,7 @@ body.menu-open {
     color: white;
 }
 /* 見出し下線 */
+.about h2::after,
 .area h2::after,
 .ticket h2::after,
 .access h2::after {
@@ -1310,6 +1347,7 @@ body.menu-open {
 
 /* コンテンツエリア */
 .about-content,
+.news-content,
 .area-content,
 .lineup-content,
 .ticket-content,
