@@ -1824,6 +1824,7 @@ body.menu-open {
     
     .venue-info {
         padding: 2rem;
+        width: 90%;
     }
 
     .venue-info h3 {
