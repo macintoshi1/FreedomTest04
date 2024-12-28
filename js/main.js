@@ -1,7 +1,9 @@
 function smoothScroll(targetElement) {
-  const headerOffset = -4;
   const startPosition = window.pageYOffset;
-  const targetPosition = targetElement.getBoundingClientRect().top + startPosition - headerOffset;
+  const headerOffset = -4;  // 追加
+  // スマホ幅（768px以下）の場合は80px、それ以外は0pxのオフセット
+  const offset = window.innerWidth <= 768 ?  40 : 0;
+  const targetPosition = targetElement.getBoundingClientRect().top + startPosition - headerOffset - offset;
   const distance = targetPosition - startPosition;
   
   const speed = 4000; // px/秒
@@ -78,6 +80,16 @@ function smoothScroll(targetElement) {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const targetElement = document.querySelector(targetId);
+
+        console.log('Link clicked:', targetId);
+        console.log('Target element:', targetElement);
+
+        if (targetElement) {
+            smoothScroll(targetElement);
+            toggleMenu(false);
+        } else {
+            console.error('Target element not found:', targetId);
+        }
         
         smoothScroll(targetElement);
         toggleMenu(false);
