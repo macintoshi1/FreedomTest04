@@ -584,10 +584,10 @@ body.menu-open {
     color: white;
 }
 
-.feature-icon {
+/* .feature-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
-    /* 円形の背景を追加 */
+    円形の背景を追加
     width: 100px;
     height: 100px;
     background; #999;
@@ -598,8 +598,15 @@ body.menu-open {
     margin: 0 auto 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+ */
 
-.feature-item h3 {
+/* ホバーエフェクト */
+.feature-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+ .feature-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     /* color: var(--text-color); */
@@ -612,11 +619,6 @@ body.menu-open {
     line-height: 1.6;
 }
 
-/* ホバーエフェクト */
-.feature-item:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
 
 /* NEWSセクション */
 .news h2 {
@@ -654,7 +656,8 @@ body.menu-open {
 
 .news-item:hover {
     background: rgba(50, 50, 55, 0.5);  /* わずかに明るく */
-    /* または background: #323237; */
+    transform: translateY(-5px);  /* 上に浮かび上がる */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* 影を強調 */
 }
 
 .news-text {
@@ -1547,9 +1550,8 @@ body.menu-open {
         display: block;
     }
 
-    .hamburger {
-        display: flex;  /* ブレイクポイント以下でflex */
-        right: 0.5rem;
+    .nav-right {
+        gap: 0;
     }
 
     .hero-buttons {
@@ -1557,8 +1559,14 @@ body.menu-open {
     }
 
     .btn-primary {
-        font-size: 0.95rem;
-        min-width: 120px;
+        transform: scale(0.7);
+        padding: 0.5rem 0;
+        white-space: nowrap;
+    }
+
+    .hamburger {
+        display: flex;  /* ブレイクポイント以下でflex */
+        right: 0.5rem;
     }
 
     .hero-content {
