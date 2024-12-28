@@ -1624,6 +1624,11 @@ body.menu-open {
         white-space: nowrap;
     }
 
+    .hero-buttons a.btn-primary:hover,
+    .hero-buttons a.btn-primary:active {
+        transform: scale(0.7);  /* スケールを維持 */
+    }
+
     .hamburger {
         display: flex;  /* ブレイクポイント以下でflex */
         right: 0.5rem;
