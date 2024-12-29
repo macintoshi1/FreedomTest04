@@ -941,7 +941,6 @@ body.menu-open {
     color: var(--text-color);
     width: 100%;
     text-align: center;
-
 }
 
 .ticket-platforms {
@@ -1807,6 +1806,10 @@ body.menu-open {
         font-size: 0.9rem;  /* フォントサイズを縮小 */
         position: relative;
         z-index: 2;
+    }
+
+    .ticket-announcement {
+        width: 100%;  /* スマホ幅では90%に */
     }
 
     .ticket-message {
