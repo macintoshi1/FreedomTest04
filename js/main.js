@@ -96,6 +96,19 @@ function smoothScroll(targetElement) {
     });
 });
 
+// ここに追加 ========================
+// フッターリンクのクリックイベント
+document.querySelector('footer').querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        smoothScroll(targetElement);  // 同じsmoothScroll関数を使用
+    });
+});
+// ここまで追加 =====================
+
   // ここから追加 ========================
     // スクロールアニメーション用の監視設定
     const scrollElements = document.querySelectorAll(
