@@ -1809,6 +1809,10 @@ body.menu-open {
         z-index: 2;
     }
 
+    .ticket-message {
+        white-space: pre-line;  /* PCの時だけ半角スペースで改行 */
+    }
+
     /* ACCESSセクション */
     .access {
         padding: 4rem 1rem;
