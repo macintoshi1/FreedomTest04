@@ -810,8 +810,6 @@ body.menu-open {
     transition: all 0.3s ease;  
 }
 
-/* s */
-
 .lineup-announcement {
     margin: 4rem auto;
     padding: 0 2rem;
@@ -844,6 +842,13 @@ body.menu-open {
     animation: gradientGlow 6.4s ease-out infinite;
     z-index: -1;
 }
+
+/* 出演者掲載時にコメントイン */
+/* .lineup-announcement.scroll-fade-up:hover {
+    transform: scale(1.04);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+} */
 
 /* グラデーション伸縮アニメーション */
 @keyframes gradientGlow {
