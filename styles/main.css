@@ -667,10 +667,16 @@ body.menu-open {
     border-radius: 3px;
 }
 
-.news-item:hover {
-    background: rgba(50, 50, 55, 0.5);  /* わずかに明るく */
+/* .news-item:hover {
+    background: rgba(50, 50, 55, 0.5);
     transform: scale(1.04);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  /* 影を強調 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+} */
+
+.news-item.scroll-fade-up:hover {
+    background: rgba(50, 50, 55, 0.5);
+    transform: scale(1.04);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .news-item:hover::-webkit-scrollbar-thumb {
