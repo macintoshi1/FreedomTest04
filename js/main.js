@@ -112,7 +112,7 @@ document.querySelector('footer').querySelectorAll('a[href^="#"]').forEach(link =
   // ここから追加 ========================
     // スクロールアニメーション用の監視設定
     const scrollElements = document.querySelectorAll(
-        '.feature-item,.area-item, .extras-item, .venue-info, .map-wrapper, .transport-card, .ticket-announcement, .lineup-announcement'  // lineup-announcementを追加
+        '.feature-item, .news-item,.area-item, .extras-item, .venue-info, .map-wrapper, .transport-card, .ticket-announcement, .lineup-announcement'  // lineup-announcementを追加
     );
 
     const observer = new IntersectionObserver((entries) => {
