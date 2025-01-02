@@ -1682,7 +1682,7 @@ body.menu-open {
         width: min(80vw, 400px);
         margin-bottom: 2rem;
         position: relative;
-        top: -5vh;
+        top: -2vh;
     }
     
     .hero-logo.reveal {
@@ -1706,6 +1706,8 @@ body.menu-open {
         font-size: 1rem;  /* スマホではより小さく */
         margin-top: -8rem;
         margin-bottom: 16rem;
+        position: relative;
+        top: -2vh; 
     }
 
     .hero-info {
