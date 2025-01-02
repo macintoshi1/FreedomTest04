@@ -1704,8 +1704,7 @@ body.menu-open {
 
     .hero-subtitle {
         font-size: 1rem;  /* スマホではより小さく */
-        /* margin-top: -2.5rem; */
-        margin-top: -9rem;
+        margin-top: -7.5rem;
         margin-bottom: 16rem;
     }
 
