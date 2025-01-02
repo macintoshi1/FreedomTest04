@@ -449,6 +449,9 @@ body.menu-open {
     opacity: 0;
     filter: blur(10px);
     transform: scale(1.2);
+    /* 既存のスタイル */
+    position: relative;
+    z-index: 1;
 }
 
 .hero-logo.reveal {
@@ -467,10 +470,32 @@ body.menu-open {
     display: none;
 }
 
+.hero-subtitle {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    margin-top: -9rem;
+    margin-bottom: 16rem;
+    font-family: "Helvetica Nueu", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.1);
+    position: relative;  /* 位置調整のため */
+    z-index: 3;  /* ロゴより前面に */
+}
+
+.hero-subtitle.reveal {
+    animation: infoReveal 2.5s ease forwards;
+}
+
 .hero-info {
     opacity: 0;
     filter: blur(10px);
     transform: scale(1.1);
+    /* 既存のスタイル */
+    position: relative;
+    z-index: 1;  /* hero-logo と同じレベル */
 }
 
 .hero-info.reveal {
