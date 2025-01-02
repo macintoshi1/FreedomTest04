@@ -1707,7 +1707,7 @@ body.menu-open {
         margin-top: -8rem;
         margin-bottom: 16rem;
         position: relative;
-        top: -1vh; 
+        top: 1vh; 
     }
 
     .hero-info {
