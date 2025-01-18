@@ -1703,16 +1703,6 @@ body.menu-open {
         right: 0.5rem;
     }
 
-    .hero-content {
-        height: 110vh;
-        /* padding: 0 1rem; */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding-top: 15vh;
-    }
-
     .hero {
         max-height: 110vh;
         height: 110vh;
@@ -1721,6 +1711,11 @@ body.menu-open {
     .hero-content {
         max-height: 110vh;
         height: 110vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 15vh;
     }
 
     .hero-logo {
