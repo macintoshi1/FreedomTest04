@@ -434,13 +434,13 @@ body.menu-open {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 1rem;
+    padding-top: 0;
 }
 
 .hero-logo {
     width: min(80vw, 600px);
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     opacity: 0;
     filter: blur(10px);
     transform: scale(1.2);
@@ -1711,6 +1711,16 @@ body.menu-open {
         justify-content: flex-start;
         align-items: center;
         padding-top: 15vh;
+    }
+
+    .hero {
+        max-height: 110vh;
+        height: 110vh;
+    }
+
+    .hero-content {
+        max-height: 110vh;
+        height: 110vh;
     }
 
     .hero-logo {
