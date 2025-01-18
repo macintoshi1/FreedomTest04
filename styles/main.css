@@ -434,7 +434,7 @@ body.menu-open {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 0;
+    padding-top: 1rem;
 }
 
 .hero-logo {
