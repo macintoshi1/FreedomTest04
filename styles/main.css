@@ -1715,12 +1715,12 @@ body.menu-open {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 15vh;
+        padding-top:8vh;
     }
 
     .hero-logo {
         width: min(80vw, 400px);
-        margin-top: 10rem;
+        margin-top: 5rem;
         margin-bottom: 2rem;
         position: relative;
     }
@@ -1745,7 +1745,7 @@ body.menu-open {
     .hero-subtitle {
         font-size: 1rem;  /* スマホではより小さく */
         margin-top: -8rem;
-        margin-bottom: 16rem;
+        margin-bottom: 12rem;
         position: relative;
         top: 2vh; 
     }
