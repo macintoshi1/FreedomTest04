@@ -469,8 +469,8 @@ body.menu-open {
     color: var(--primary-color);
     font-size: 1.4rem;
     letter-spacing: 0.2em;
-    margin-top: -9rem;
-    margin-bottom: 12rem;
+    margin-top: -10rem;
+    margin-bottom: 16rem;
     font-family: "Helvetica Nueu", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     font-weight: bold;
     opacity: 0;
@@ -1744,10 +1744,10 @@ body.menu-open {
 
     .hero-subtitle {
         font-size: 1rem;  /* スマホではより小さく */
-        margin-top: -8rem;
+        margin-top: -6rem;
         margin-bottom: 12rem;
         position: relative;
-        top: 2vh; 
+        top: 2vh;
     }
 
     .hero-info {
