@@ -63,7 +63,7 @@ function smoothScroll(targetElement) {
       toggleMenu(isOpening);
   });
 
-  const ticketButton = document.querySelector('.nav-buttons .btn-primary');
+  const ticketButton = document.querySelector('.hero-buttons .btn-primary');
   if (ticketButton) {
     ticketButton.addEventListener('click', (e) => {
         e.preventDefault();
