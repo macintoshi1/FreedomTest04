@@ -119,7 +119,6 @@ body.menu-open {
         }
     }
 
-/* 日本語を使用する要素（場所、コンセプトなど） */
 .location, 
 .concept {
     font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", sans-serif;
@@ -226,18 +225,6 @@ body.menu-open {
     letter-spacing: .05em;
 }
 
-/* .nav-pc-menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem;
-    gap: 1rem;
-    width: 100%;
-} */
-
-
-
-
 .nav-right {
     position: absolute;
     right: 2rem;
@@ -270,25 +257,25 @@ body.menu-open {
     text-decoration: none;
 }
 
-
-
 .lang-switch a:hover {
     color: var(--secondary-light);  /* ホバー時は文字色のみ変更 */
 }
 
 
 /* チケットボタン */
-.hero-buttons {
-    /* position: absolute;
-    right: calc(2rem + 45px);
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%); */
+
+.nav-buttons {
     display: flex;
     gap: 1rem;
 }
 
-.btn-primary, .btn-secondary {
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: -10rem;
+}
+
+.btn-primary {
     padding: 0.5rem 1.6rem;  /* ボタンを少し大きく */
     font-size: 0.95rem;
     display: flex;
@@ -305,6 +292,13 @@ body.menu-open {
     min-width: 120px;
 }
 
+.nav-buttons a.btn-primary {
+    background: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 5px 15px #55fefe33;
+    transition: all 0s ease;
+}
+
 .hero-buttons a.btn-primary {
     background: var(--primary-color);
     color: var(--text-color);
@@ -312,16 +306,17 @@ body.menu-open {
     transition: all 0s ease;
 }
 
-.hero-buttons a.btn-secondary {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    /* text-decoration: none; */
-}
 
 .btn-primary {
     min-width: 120px;
     text-align: center;
+}
+
+.nav-buttons a.btn-primary:hover {
+    background-color: var(--secondary-light);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
 }
 
 .hero-buttons a.btn-primary:hover {
@@ -329,6 +324,10 @@ body.menu-open {
     color: white;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
+}
+
+.nav-buttons a::after {
+    display: none;
 }
 
 .hero-buttons a::after {
@@ -489,6 +488,15 @@ body.menu-open {
     animation: infoReveal 2.5s ease forwards;
 }
 
+.hero-buttons {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.1);
+    /* 既存のスタイル */
+    position: relative;
+    z-index: 1;  /* hero-logo と同じレベル */
+}
+
 .hero-info {
     opacity: 0;
     filter: blur(10px);
@@ -496,6 +504,10 @@ body.menu-open {
     /* 既存のスタイル */
     position: relative;
     z-index: 1;  /* hero-logo と同じレベル */
+}
+
+.hero-buttons.reveal {
+    animation: infoReveal 2.5s ease forwards;
 }
 
 .hero-info.reveal {
@@ -512,8 +524,8 @@ body.menu-open {
 
 .hero .date {
     font-size: 2rem;
-    margin-top: -6rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -1521,6 +1533,14 @@ body.menu-open {
 
 /* レスポンシブ対応 */
 @media (max-width: 1024px) {
+    .nav-buttons a.btn-primary:hover,
+    .nav-buttons a.btn-primary:active {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        transform: none;
+        box-shadow: 0 5px 15px #55fefe33;
+    }
+
     .hero-buttons a.btn-primary:hover,
     .hero-buttons a.btn-primary:active {
         background-color: var(--primary-color);
@@ -1649,7 +1669,7 @@ body.menu-open {
         gap: 0;
     }
 
-    .hero-buttons {
+    .nav-buttons {
         right: calc(0.5rem + 32px);
     }
 
@@ -1659,9 +1679,14 @@ body.menu-open {
         white-space: nowrap;
     }
 
+    .nav-buttons a.btn-primary:hover,
+    .nav-buttons a.btn-primary:active {
+        transform: scale(0.7);
+    }
+
     .hero-buttons a.btn-primary:hover,
     .hero-buttons a.btn-primary:active {
-        transform: scale(0.7);  /* スケールを維持 */
+        transform: scale(0.7);
     }
 
     .hamburger {
@@ -1724,6 +1749,11 @@ body.menu-open {
         font-size: 1rem;
     }
     
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
