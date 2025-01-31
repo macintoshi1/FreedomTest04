@@ -136,6 +136,7 @@ document.querySelector('footer').querySelectorAll('a[href^="#"]').forEach(link =
     const heroLogo = document.querySelector('.hero-logo');
     const heroSubtitle = document.querySelector('.hero-subtitle');
     const heroInfo = document.querySelector('.hero-info'); 
+    const heroButtons = document.querySelector('.hero-buttons');
     
     // 背景画像のURL取得
     const bgImage = getComputedStyle(heroBackground)
@@ -153,6 +154,10 @@ document.querySelector('footer').querySelectorAll('a[href^="#"]').forEach(link =
             heroSubtitle.classList.add('reveal');  // サブタイトルのreveal
         }, 1940);  // ロゴの後、1秒後に表示
         
+        setTimeout(() => {
+            heroButtons.classList.add('reveal');
+        }, 2000);
+
         setTimeout(() => {
             heroInfo.classList.add('reveal');
         }, 2000);
