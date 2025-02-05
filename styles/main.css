@@ -119,6 +119,7 @@ body.menu-open {
         }
     }
 
+/* 日本語を使用する要素（場所、コンセプトなど） */
 .location, 
 .concept {
     font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", sans-serif;
@@ -225,6 +226,18 @@ body.menu-open {
     letter-spacing: .05em;
 }
 
+/* .nav-pc-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+} */
+
+
+
+
 .nav-right {
     position: absolute;
     right: 2rem;
@@ -257,6 +270,8 @@ body.menu-open {
     text-decoration: none;
 }
 
+
+
 .lang-switch a:hover {
     color: var(--secondary-light);  /* ホバー時は文字色のみ変更 */
 }
@@ -265,6 +280,11 @@ body.menu-open {
 /* チケットボタン */
 
 .nav-buttons {
+    /* position: absolute;
+    right: calc(2rem + 45px);
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%); */
     display: flex;
     gap: 1rem;
 }
@@ -272,10 +292,19 @@ body.menu-open {
 .hero-buttons {
     display: flex;
     gap: 1rem;
+    position: relative;
     margin-top: -10rem;
+    z-index: 2;
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.1);
 }
 
-.btn-primary {
+.hero-buttons.reveal {
+    animation: infoReveal 2.5s ease forwards;
+}
+
+.btn-primary, .btn-secondary {
     padding: 0.5rem 1.6rem;  /* ボタンを少し大きく */
     font-size: 0.95rem;
     display: flex;
@@ -306,17 +335,16 @@ body.menu-open {
     transition: all 0s ease;
 }
 
+.hero-buttons a.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    /* text-decoration: none; */
+}
 
 .btn-primary {
     min-width: 120px;
     text-align: center;
-}
-
-.nav-buttons a.btn-primary:hover {
-    background-color: var(--secondary-light);
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
 }
 
 .hero-buttons a.btn-primary:hover {
@@ -324,10 +352,6 @@ body.menu-open {
     color: white;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
-}
-
-.nav-buttons a::after {
-    display: none;
 }
 
 .hero-buttons a::after {
@@ -488,15 +512,6 @@ body.menu-open {
     animation: infoReveal 2.5s ease forwards;
 }
 
-.hero-buttons {
-    opacity: 0;
-    filter: blur(10px);
-    transform: scale(1.1);
-    /* 既存のスタイル */
-    position: relative;
-    z-index: 1;  /* hero-logo と同じレベル */
-}
-
 .hero-info {
     opacity: 0;
     filter: blur(10px);
@@ -504,10 +519,7 @@ body.menu-open {
     /* 既存のスタイル */
     position: relative;
     z-index: 1;  /* hero-logo と同じレベル */
-}
-
-.hero-buttons.reveal {
-    animation: infoReveal 2.5s ease forwards;
+    margin-top: 7rem;
 }
 
 .hero-info.reveal {
@@ -524,8 +536,8 @@ body.menu-open {
 
 .hero .date {
     font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 0;
+    margin-top: -6rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -687,6 +699,9 @@ body.menu-open {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 控えめな影 */
     transition: all 0.3s ease;  /* ホバー効果用 */
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 /* スクロールバーのスタイリング（オプション） */
@@ -723,7 +738,11 @@ body.menu-open {
 .news-text {
     position: relative;  /* 追加：コンテンツの配置の基準点を設定 */
     top: 0;             /* 追加：上端に合わせる */
-    height: 100%;
+    height: auto;
+    max-height: 100%;
+    overflow-y: auto;
+    mask-image: linear-gradient(to bottom, black calc(100% - 1.5rem), transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 1.5rem), transparent 100%);
 }
 
 .news-text h3 {
@@ -746,6 +765,50 @@ body.menu-open {
 .news-text p {
     color: white;
     line-height: 1.6;
+}
+
+/* news-moreボタンのスタイル */
+.news-more {
+    display: flex;           /* flexboxを使用 */
+    justify-content: center; /* 水平方向の中央寄せ */
+    width: 100%;            /* 親要素の幅いっぱいに */
+}
+
+.news-more-btn {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: opacity 0.3s;
+}
+
+.news-more-btn:hover {
+    opacity: 0.8;
+}
+
+.news-more-icon {
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.news-archive {
+    display: none;
+}
+
+.news-archive.show {
+    display: block;
+}
+
+/* MOREとCLOSEの切り替え */
+.news-more-btn.active .news-more-icon {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
 }
 
 /* AREAセクション */
@@ -1533,14 +1596,6 @@ body.menu-open {
 
 /* レスポンシブ対応 */
 @media (max-width: 1024px) {
-    .nav-buttons a.btn-primary:hover,
-    .nav-buttons a.btn-primary:active {
-        background-color: var(--primary-color);
-        color: var(--text-color);
-        transform: none;
-        box-shadow: 0 5px 15px #55fefe33;
-    }
-
     .hero-buttons a.btn-primary:hover,
     .hero-buttons a.btn-primary:active {
         background-color: var(--primary-color);
@@ -1669,7 +1724,7 @@ body.menu-open {
         gap: 0;
     }
 
-    .nav-buttons {
+    .hero-buttons {
         right: calc(0.5rem + 32px);
     }
 
@@ -1679,14 +1734,9 @@ body.menu-open {
         white-space: nowrap;
     }
 
-    .nav-buttons a.btn-primary:hover,
-    .nav-buttons a.btn-primary:active {
-        transform: scale(0.7);
-    }
-
     .hero-buttons a.btn-primary:hover,
     .hero-buttons a.btn-primary:active {
-        transform: scale(0.7);
+        transform: scale(0.7);  /* スケールを維持 */
     }
 
     .hamburger {
@@ -1737,7 +1787,7 @@ body.menu-open {
 
     .hero-info {
         position: relative;
-        top: 0; 
+        top: -5vh; 
     }
 
     .hero .date {
@@ -1749,18 +1799,9 @@ body.menu-open {
         font-size: 1rem;
     }
     
-
-    /* チケットボタン */
-    .nav-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        margin-top: -10rem;
-        margin-bottom: 1rem;
     }
 
     .nav ul {
