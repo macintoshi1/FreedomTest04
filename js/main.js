@@ -131,6 +131,28 @@ document.querySelector('footer').querySelectorAll('a[href^="#"]').forEach(link =
     });
     // ここまで追加 ========================
     // スクロールアニメーション用の監視設定の後に追加
+
+    // MOREボタンの制御部分を以下のように書き換え
+const newsMoreBtn = document.querySelector('.news-more-btn');
+const newsArchive = document.querySelector('.news-archive');
+
+if (newsMoreBtn && newsArchive) {
+    const moreSpan = newsMoreBtn.querySelector('span');  // spanを取得
+
+    newsMoreBtn.addEventListener('click', () => {
+        newsArchive.classList.toggle('show');  // visibleではなくshowに変更
+        newsMoreBtn.classList.toggle('active');
+        
+        // テキストの切り替え
+        if (newsArchive.classList.contains('show')) {
+            moreSpan.textContent = 'CLOSE';
+        } else {
+            moreSpan.textContent = 'MORE';
+        }
+    });
+}
+    // MOREボタンの制御ここまで ========================
+
     // 背景画像とロゴの制御
     const heroBackground = document.querySelector('.hero-background');
     const heroLogo = document.querySelector('.hero-logo');
