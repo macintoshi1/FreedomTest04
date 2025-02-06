@@ -743,7 +743,7 @@ body.menu-open {
     overflow-y: auto;
     mask-image: linear-gradient(to bottom, black calc(100% - 1.5rem), transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 1.5rem), transparent 100%);
-    width: 100%;
+    max-width: 100%;
 }
 
 .news-text h3 {
