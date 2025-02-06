@@ -1724,8 +1724,10 @@ body.menu-open {
         gap: 0;
     }
 
+    /* チケットボタン */
     .hero-buttons {
-        right: calc(0.5rem + 32px);
+        flex-direction: column;
+        align-items: center;
     }
 
     .btn-primary {
@@ -1797,11 +1799,6 @@ body.menu-open {
 
     .hero .location {
         font-size: 1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
     }
 
     .nav ul {
