@@ -289,6 +289,11 @@ body.menu-open {
     gap: 1rem;
 }
 
+/* .nav-buttons {
+    display: flex;
+    gap: 1rem;
+} */
+
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -343,8 +348,15 @@ body.menu-open {
 }
 
 .btn-primary {
-    min-width: 120px;
+    /* min-width: 120px; */
     text-align: center;
+}
+
+.nav-buttons a.btn-primary:hover {
+    background-color: var(--secondary-light);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
 }
 
 .hero-buttons a.btn-primary:hover {
@@ -771,6 +783,23 @@ body.menu-open {
     line-height: 1.6;
 }
 
+.news-text a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-item .news-text a:hover {
+    color: var(--secondary-light);  
+}
+
+.news-text a:visited,
+.news-text a:active {
+    color: var(--primary-color);  /* クリック後も同じ色 */
+    text-decoration: none;        /* アンダーラインを消す */
+}
+
 /* news-moreボタンのスタイル */
 .news-more {
     display: flex;           /* flexboxを使用 */
@@ -793,7 +822,7 @@ body.menu-open {
 }
 
 .news-more-btn:hover {
-    opacity: 0.8;
+    color: var(--secondary-light);
 }
 
 .news-more-icon {
