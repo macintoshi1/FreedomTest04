@@ -702,6 +702,7 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 100%;
 }
 
 /* スクロールバーのスタイリング（オプション） */
