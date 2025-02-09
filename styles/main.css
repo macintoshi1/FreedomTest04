@@ -1630,6 +1630,11 @@ body.menu-open {
 
 /* レスポンシブ対応 */
 @media (max-width: 1024px) {
+    .hero-background {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                          url('../images/IMG_9316_03_medium.jpeg');
+    }
+
     .hero-buttons a.btn-primary:hover,
     .hero-buttons a.btn-primary:active {
         background-color: var(--primary-color);
@@ -1729,6 +1734,10 @@ body.menu-open {
         gap: 2rem;
     }
 
+    .hero-background {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../image/IMG_9316_03_small.jpeg');
+    }
+
     /* ナビゲーション調整 */
     .nav-mobile {
         left: 0.5rem;
@@ -1762,6 +1771,10 @@ body.menu-open {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        margin-top: 0;
+        margin-bottom: -1.5rem;
+        position: relative;
+        top: -8vh;
     }
 
     .btn-primary {
@@ -1816,14 +1829,15 @@ body.menu-open {
     .hero-subtitle {
         font-size: 1rem;  /* スマホではより小さく */
         margin-top: -8rem;
-        margin-bottom: 16rem;
+        margin-bottom: 10rem;
         position: relative;
         top: 2vh; 
     }
 
     .hero-info {
         position: relative;
-        top: -5vh; 
+        top: 0; 
+        margin-top: -1.5rem;
     }
 
     .hero .date {
