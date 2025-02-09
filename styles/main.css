@@ -705,7 +705,7 @@ body.menu-open {
     border-radius: 10px;
     backdrop-filter: blur(12px);
     height: 140px;
-    overflow-y: auto;
+    overflow-y: scroll;
     border: 1px solid rgba(255, 255, 255, 0.08);  
     position: relative;     /* 位置の基準点を設定 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 控えめな影 */
