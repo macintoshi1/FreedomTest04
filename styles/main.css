@@ -250,7 +250,6 @@ body.menu-open {
 }
 
 /* 言語切り替えボタン */
-
 .lang-switch {
     display: flex;
     align-self: center;
@@ -388,17 +387,6 @@ body.menu-open {
     -webkit-tap-highlight-color: transparent; 
 }
 
-
-/* 
-.hamburger::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-} */
-
 .hamburger span {
     display: block;
     height: 2px;
@@ -435,7 +423,6 @@ body.menu-open {
     color: white; */
 }
 
-
 /* ヒーローセクション */
 .hero::before {
     content: '';
@@ -454,8 +441,7 @@ body.menu-open {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../images/IMG_9316_03.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://freedom-japan-festival.com/images/IMG_9316_03.jpeg');
     background-size: cover;
     background-position: center;
     animation: slowZoom 20s infinite alternate;
@@ -651,7 +637,7 @@ body.menu-open {
 } */
 
 .feature-item.scroll-fade-up:hover {
-    transform: scale(1.08);
+    transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     /* z-index: 2000; */
 }
@@ -833,10 +819,18 @@ body.menu-open {
 
 .news-archive {
     display: none;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-.news-archive.show {
+/* .news-archive.show {
     display: block;
+} */
+
+.news-archive.show {
+    display: flex; /* フレックスボックスを使用してアイテムを配置 */
+    flex-direction: column; /* 縦方向にアイテムを配置 */
+    gap: 2rem; /* アイテム間の隙間を設定 */
 }
 
 /* MOREとCLOSEの切り替え */
@@ -933,12 +927,17 @@ body.menu-open {
     transform: scale(1.1);
 }
 
-/* LINE UPセクション */
+/* LINEUPセクション */
+/* .lineup h2 {
+    margin-bottom: 0;
+} */
+
 .lineup-content {
     text-align: center;
     padding: 2rem;
-    height: calc(100vh - 200px);
+    height: auto; /* 高さを自動調整 */
     display: flex;
+    flex-direction: column; /* 縦方向に配置 */
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;  
@@ -1023,6 +1022,63 @@ body.menu-open {
         opacity: 1;
     }
 }
+
+.lineup-grid {
+    margin-top: 3rem; /* h2との間にスペースを追加 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.artist-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out;
+    cursor: pointer;
+    height: auto;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.artist-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.artist-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.artist-photo {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    /* display: block; */
+    /* transition: opacity 0.3s ease; */
+    transition: transform 0.3s ease;
+}
+
+.artist-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.1rem;
+    text-align: center;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.artist-card:hover .artist-info {
+    opacity: 1;
+}
+
 
 /* TICKETセクション */
 .ticket-content {
@@ -1144,7 +1200,7 @@ body.menu-open {
     background-color: var(--primary-color);
 }
 
-.access-grid {
+/* .access-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
@@ -1155,7 +1211,7 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-}
+} */
 
 /* 会場情報 */
 .access-content {
@@ -1334,6 +1390,58 @@ body.menu-open {
     font-weight: bold;
 }
 
+/* CONTACTセクション */
+.contact {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    aligh-items: center;
+    gap: 2rem;
+}
+
+.contact-message {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.contact-info {
+    margin-top: 4rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info a {
+    color: var(--primary-color); /* Extraセクションのリンク色 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-light); /* ホバー時の色 */
+}
+
+.fa-regular,
+.fa-brands {
+    color: #fff;
+    font-size: 1.7rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
 /* アニメーション */
 @keyframes gradientFlow {
     0% { background-position: 0% 50%; }
@@ -1348,7 +1456,8 @@ body.menu-open {
 .lineup,
 .ticket,
 .extras,
-.access {
+.access,
+.contact {
     position: relative;
     z-index: 2;
     padding: 6rem 2rem;
@@ -1374,7 +1483,8 @@ body.menu-open {
 
 .scroll-fade-up.visible {
     opacity: 1;
-    transform: none;
+    /* transform: none; */
+    transform: translateY(0);
 }
 
 /* 背景色の交互配置 */
@@ -1406,7 +1516,8 @@ body.menu-open {
 .lineup h2,
 .ticket h2,
 .extras h2,
-.access h2 {
+.access h2,
+.contact h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -1420,10 +1531,11 @@ body.menu-open {
     color: var(--text-color);
 }
 
-/* NEWS,LINEUP, EXTRASセクション共通 */
+/* NEWS,LINEUP, EXTRAS, CONTACTセクション共通 */
 .news,
 .lineup,
-.extras {
+.extras,
+.contact {
     background-color: #000;
     position: relative;
     z-index: 2;
@@ -1436,7 +1548,8 @@ body.menu-open {
 
 .news h2,
 .lineup h2,
-.extras h2 {
+.extras h2,
+.contact h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -1446,7 +1559,8 @@ body.menu-open {
 
 .news h2::after,
 .lineup h2::after,
-.extras h2::after {
+.extras h2::after,
+.contact h2::after {
     content: '';
     position: absolute;
     bottom: -1rem;
@@ -1459,7 +1573,8 @@ body.menu-open {
 
 .news-content,
 .lineup-content,
-.extras-content {
+.extras-content,
+.contact-content {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -1559,7 +1674,8 @@ body.menu-open {
 .lineup-content,
 .ticket-content,
 .extras-content,
-.access-content {
+.access-content,
+.contact-cotent {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -1579,6 +1695,31 @@ body.menu-open {
     font-size: 0.8rem;  /* 1remから0.8remに縮小 */
     margin-left: 0.3rem;
 }
+
+/* social-icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    /* padding: 1rem; */
+    gap: 1rem;
+}
+
+.social-icons a {
+    /* margin: 0 1rem; */
+    /* font-size: 2rem; */
+    color: white; /* アイコンの色を設定 */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-light); /* ホバー時の色 */
+    transform: scale(1.15); /* ホバー時の拡大効果 */
+}
+
+/* .social-icons img {
+    width: 40px;
+    height: 40px;
+} */
 
 /* フッター */
 .footer {
@@ -1607,10 +1748,18 @@ body.menu-open {
 
 .footer-nav {
     display: flex;
-    gap: 2rem;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    max-width: 700px;
 }
 
 .footer-nav a {
+    flex: 0 0 108px;
+    text-align: left; /* テキストを左揃え */
+    padding: 0.5rem; /* パディングを調整して行間を狭める */
     color: var(--primary-color);  /* シアン色のリンク */
     text-decoration: none;
     font-weight: bold;
@@ -1618,7 +1767,27 @@ body.menu-open {
 }
 
 .footer-nav a:hover {
-    opacity: 0.8;
+    opacity: 0.7;
+}
+
+.footer-nav .social-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+.footer-nav .social-icons a {
+    /* margin-right: 1rem; */
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-nav .social-icons a:hover {
+    transform: scale(1.15);
 }
 
 .copyright {
@@ -1627,12 +1796,370 @@ body.menu-open {
     font-size: 0.9rem;
 }
 
+/* アーティストページ */
+body.artist-page {
+    background-color: #000;
+    color: #fff;
+}
+
+.artist-page h1 {
+    margin: 0;
+    padding: 0.5rem 0;
+    position: relative;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+.artist-page h1::after {
+    content: '';
+    display: block;
+    width: 50px; /* 下線の長さ */
+    height: 3px; /* 下線の太さ */
+    background-color: var(--primary-color); /* 差し色 */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.artist-page-photo {
+    width: 100%; /* 画像をコンテナの幅に合わせる */
+    max-width: 696px; /* 最大幅を設定 */
+    height: auto; /* アスペクト比を維持 */
+    display: block;
+    margin: 1rem auto; /* 中央揃え */
+    border-radius: 10px; /* 角を丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影を追加 */
+}
+
+.scroll-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.artist-profile, .artist-social, .artist-media {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    margin: 0 auto 2rem;
+    max-width: 696px;
+    font-size: 1rem;
+}
+
+.artist-page .artist-profile h2,
+.artist-page .artist-social h2,
+.artist-page .artist-media h2 {
+    margin: 0;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1rem; /* 縦線のスペース */
+}
+
+.artist-page .artist-profile h2::before,
+.artist-page .artist-social h2::before,
+.artist-page .artist-media h2::before {
+    content: '';
+    display: block;
+    width: 3px; /* 縦線の太さ */
+    height: 20px; /* 縦線の長さ */
+    background-color: var(--primary-color); /* 差し色 */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.artist-profile p, .artist-social ul, .artist-media ul {
+    margin: 1rem 0;
+}
+
+.artist-profile li, .artist-social li, .artist-media li {
+    margin: 1rem 0;
+    list-style: none;
+}
+
+.artist-profile a, .artist-social a, .artist-media a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.artist-profile a:hover,
+.artist-social a:hover,
+.artist-media a:hover {
+    text-decoration: none;
+    color: var(--secondary-light);
+    opacity: 0.7;
+}
+
+
+.artist-page .artist-profile h2,
+.artist-page .artist-social h2,
+.artist-page .artist-media h2 {
+    margin: 0;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1rem; /* 縦線のスペース */
+    max-width: 800px;
+}
+
+.artist-name {
+    font-size: 1rem;
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+.artist-social-icon .fa-brands {
+    color: var(--primary-color);
+    opacity: 0.7;
+    /* padding-left: 1rem; */
+}
+
+.artist-social-icon .fa-brands:hover {
+    color: var(--secondary-light);
+    opacity: 0.7;
+}
+
+.artist-media ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.artist-media li {
+    margin-bottom: 0.5rem;
+}
+
+.youtube-thumbnail {
+    width: 160px; /* サムネイルの幅 */
+    height: auto; /* アスペクト比を維持 */
+    margin-right: 10px; /* テキストとの間隔 */
+    vertical-align: middle; /* テキストと垂直に揃える */
+    padding-right: 1rem;
+}
+
+.media-file {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+/* .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+} */
+
+/* News特設ページ */
+.news-header {
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+.news-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.news-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-light);
+}
+
+.artist-reveal {
+    display: flex;
+    flex-direction: column;
+    max-width: 760px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* News特設ページ用のアニメーション調整 */
+.artist-reveal h2 {
+    color: var(--text-color);
+    display: flex;
+    align-items: left;
+    position: relative;
+}
+
+.artist-reveal h2::before {
+    content: '';
+    display: inline-block;
+    /* position: absolute; */
+    /* left: 0; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    width: 3px;  /* 縦線の幅 */
+    height: 1.2em;  /* 文字の高さに合わせる */
+    background: var(--secondary-color);  /* 紫の縦線 */
+    margin-right: 1rem;
+}
+
+.news-topic {
+    margin-left: 1rem;
+}
+
+.artist-reveal-photo {
+    flex: 1;
+    width: 360px;
+    height: 240px;
+    overflow: hidden;
+}
+
+.artist-reveal-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.artist-reveal-photo img:hover {
+    transform: scale(1.1);
+}
+
+.artist-reveal-photo .scroll-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+.artist-reveal-photo .scroll-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 画像の行ごとの遅延設定 */
+/* .artist-row:nth-child(2) {
+    transition-delay: 0.3s;
+} */
+
+.artist-row {
+    display: flex;
+    justify-content: center;
+    /* gap: 1rem; */
+}
+
+.news-contents {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.news-detail {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.news-detail .artist-name {
+    font-weight: bold;
+}
+
+.go-lineup {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.lineup-button {
+    color: var(--secondary-light);
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: opacity 0.3s;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.lineup-button:hover {
+    opacity: 0.7;
+}
+
+.artist-reveal .back-button {
+    color: var(--secondary-light);
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: opacity 0.3s;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.artist-reveal .back-button:hover {
+    opacity: 0.7;
+}
+
+.back {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.back-button {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: opacity 0.3s;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    color: var(--secondary-light);
+    opacity: 0.7;
+}
+
+
 
 /* レスポンシブ対応 */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .hero-background {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                          url('../images/IMG_9316_03_medium.jpeg');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/IMG_9316_03_medium.jpeg');
     }
 
     .hero-buttons a.btn-primary:hover,
@@ -1735,7 +2262,8 @@ body.menu-open {
     }
 
     .hero-background {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../image/IMG_9316_03_small.jpeg');
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/IMG_9316_03_small.jpeg');
     }
 
     /* ナビゲーション調整 */
@@ -1810,7 +2338,7 @@ body.menu-open {
     }
     
     .hero-logo.reveal {
-        animation: logoReveal 5s ease forwards;
+        animation: logoReveal 3s ease forwards;
     }
     
 
@@ -1972,6 +2500,10 @@ body.menu-open {
         z-index: 2;
     }
 
+    .artist-photo {
+        height: 250px;
+    }
+
     .ticket-announcement {
         width: 100%;  /* スマホ幅では90%に */
     }
@@ -2046,6 +2578,35 @@ body.menu-open {
         margin-left: 0;  /* 左マージンをリセット */
     } 
 
+    /* 特設Newsページ */
+    .news-content {
+        max-width: 90%; /* コンテンツの最大幅を90%に設定 */
+        margin: 0 auto; /* コンテンツを中央に配置 */
+    }
+
+    /* .artist-reveal-photo {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        background-color: black;
+    } */
+
+    .artist-reveal-photo {
+        display: flex;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        background-color: black; /* 黒い帯の色 */
+        overflow: hidden; /* はみ出た部分を隠す */
+    }
+
+    .artist-reveal-photo img {
+        width: 100%;
+        height: auto;
+        transform: scale(1.2); /* 画像を0.9倍にスケール */
+        object-fit: contain; /* 画像全体を表示し、余白に黒い帯を入れる */
+    }
+
     /* フッター */
     .footer-content {
         flex-direction: column;
@@ -2056,6 +2617,18 @@ body.menu-open {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+    }
+
+    .footer-nav a {
+        flex: 0 0 10px;
+        color: var(--primary-color);  /* シアン色のリンク */
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s ease;
+    }
+
+    footer nav a {
+        margin: 0 5px;
     }
 
     .footer-logo {
