@@ -30,24 +30,50 @@ function smoothScroll(targetElement) {
 
 (function() {
   console.log('Script running');  // 追加
+    // ここから追加 ========================
+    // スクロールアニメーション用の監視設定
+    const scrollElements = document.querySelectorAll(
+        '.feature-item, .news-item, .area-item, .artist-card, .extras-item, .venue-info, .map-wrapper, .transport-card, .ticket-announcement, .lineup-announcement, .contact-message, .contact-mail, .contact-instagram, .contact-x, .artist-page-photo, .artist-profile, .artist-social, .artist, .artist-name, .artist-media, .artwork, .back-button, .news-topic, .artist-reveal-photo, .news-contents, .news-detail, .lineup-button'  // lineup-announcementを追加
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2  // 要素が10%見えたら発火
+    });
+
+    scrollElements.forEach(element => {
+        element.classList.add('scroll-fade-up');  // 初期クラスを追加
+        observer.observe(element);  // 監視開始
+
+         // 初期化時に要素がすでにビューポート内にある場合
+        if (element.getBoundingClientRect().top < window.innerHeight) {
+            element.classList.add('visible');
+    }
+    });
+    // ここまで追加 ========================
+
+   // メニュー関連の処理（これらは条件付きで実行）
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('.nav-pc-menu');
   const body = document.body;
 
   // 要素チェック
-  if (!hamburger || !nav) {
-      console.error('Required elements not found');
-      return;
+  if (hamburger && nav) {  // 要素が存在する場合のみ実行
+    // トランジションの監視（デバッグ用に残す）
+    nav.addEventListener('transitionstart', (e) => {
+        console.log('Transition start:', e.propertyName);
+    });
+
+    nav.addEventListener('transitionend', (e) => {
+        console.log('Transition end:', e.propertyName);
+    });
+
   }
-
-  // トランジションの監視（デバッグ用に残す）
-  nav.addEventListener('transitionstart', (e) => {
-      console.log('Transition start:', e.propertyName);
-  });
-
-  nav.addEventListener('transitionend', (e) => {
-      console.log('Transition end:', e.propertyName);
-  });
 
   // メニュー開閉の処理をひとつの関数にまとめる
   function toggleMenu(show) {
@@ -108,28 +134,6 @@ document.querySelector('footer').querySelectorAll('a[href^="#"]').forEach(link =
     });
 });
 // ここまで追加 =====================
-
-  // ここから追加 ========================
-    // スクロールアニメーション用の監視設定
-    const scrollElements = document.querySelectorAll(
-        '.feature-item, .news-item,.area-item, .extras-item, .venue-info, .map-wrapper, .transport-card, .ticket-announcement, .lineup-announcement'  // lineup-announcementを追加
-    );
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1  // 要素が10%見えたら発火
-    });
-
-    scrollElements.forEach(element => {
-        element.classList.add('scroll-fade-up');  // 初期クラスを追加
-        observer.observe(element);  // 監視開始
-    });
-    // ここまで追加 ========================
     // スクロールアニメーション用の監視設定の後に追加
 
     // MOREボタンの制御部分を以下のように書き換え
@@ -174,15 +178,15 @@ if (newsMoreBtn && newsArchive) {
 
         setTimeout(() => {
             heroSubtitle.classList.add('reveal');  // サブタイトルのreveal
-        }, 1940);  // ロゴの後、1秒後に表示
+        }, 940);  // ロゴの後、1秒後に表示
         
         setTimeout(() => {
             heroButtons.classList.add('reveal');
-        }, 2000);
+        }, 1000);
 
         setTimeout(() => {
             heroInfo.classList.add('reveal');
-        }, 2000);
+        }, 1000);
     };
     
     // 背景画像の読み込みを開始
