@@ -2,18 +2,18 @@
     /* メインカラー */
     --primary-color: #55fefe;
     --primary-dark: #00d6d6;
-    --primary-light: #9dffff; 
+    --primary-light: #9dffff;
     --secondary-color: #9255fd;
     --secondary-light: #b18fff;
     --secondary-background: #faf7fc;
     --color-pink: #ff106f;
     --color-pink-light: #ff5a99;
-  
+
 
     /* システムカラー */
     --text-color: #2d3436;
     --background-color: #f8f8f8;
-    --space-gray: #2C3E50; 
+    --space-gray: #2C3E50;
 
     /* グラデーションの終点カラー */
     --mint-end: #9dffff;
@@ -74,7 +74,7 @@ body.menu-open {
 }
 
 
-.nav-pc-menu {
+/* .nav-pc-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -88,25 +88,62 @@ body.menu-open {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
-    transition: 
+    flex-direction: column;
+    transition:
         opacity 0.5s ease,
         background-color 0.5s ease,
         backdrop-filter 0.5s ease;
     gap: 1rem;
-}
-
-/* .nav-pc-menu.active {
-    display: flex;
-    transform: translateX(0);
-    opacity: 0.7;
 } */
 
-.nav-pc-menu.active {
+.nav-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 画面全体を覆う */
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center; /* 中央に配置 */
+    align-items: center;
+    flex-direction: column;
+    transition:
+        opacity 0.5s ease,
+        background-color 0.5s ease,
+        backdrop-filter 0.5s ease;
+}
+
+.nav-menu-container.active {
     background: rgba(0, 0, 0, 0.8);
     opacity: 1;
     pointer-events: auto;
     backdrop-filter: blur(8px);
+}
+
+/* .nav-pc-menu.active {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(8px);
+} */
+
+.nav-pc-menu {
+    width: 100%;
+    max-height: 60vh; /* メニュー項目の最大高さを設定 */
+    overflow-y: auto; /* 縦方向にスクロール可能 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
     /* Safari対応 */
@@ -119,8 +156,27 @@ body.menu-open {
         }
     }
 
+/* Webkit（Chrome, Safari等）用のスクロールバースタイル */
+.nav-pc-menu::-webkit-scrollbar {
+    width: 6px; /* スクロールバーの幅 */
+}
+
+/* Webkit（Chrome, Safari等）用のスクロールバースタイル */
+.nav-pc-menu::-webkit-scrollbar {
+    width: 6px; /* スクロールバーの幅 */
+}
+
+.nav-pc-menu::-webkit-scrollbar-track {
+    background: transparent; /* トラック部分を透明に */
+}
+
+.nav-pc-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3); /* つまみ部分を半透明白に */
+    border-radius: 3px; /* 角を丸く */
+}
+
 /* 日本語を使用する要素（場所、コンセプトなど） */
-.location, 
+.location,
 .concept {
     font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", sans-serif;
     letter-spacing: .02em;
@@ -139,6 +195,8 @@ body.menu-open {
     transform: translateY(20px);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     transition-delay: calc(var(--i) * 0.1s);
+    width: 100%;
+    text-align: center;
 }
 
 .nav-pc-menu.active li {
@@ -253,7 +311,7 @@ body.menu-open {
 .lang-switch {
     display: flex;
     align-self: center;
-    margin-bottom: -0.2rem; 
+    margin-bottom: -0.2rem;
 }
 
 .lang-switch a {
@@ -355,14 +413,14 @@ body.menu-open {
     background-color: var(--secondary-light);
     color: white;
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
+    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3);
 }
 
 .hero-buttons a.btn-primary:hover {
     background-color: var(--secondary-light);
     color: white;
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
+    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3);
 }
 
 .hero-buttons a::after {
@@ -384,7 +442,7 @@ body.menu-open {
     justify-content: space-between;
     cursor: pointer;
     z-index: 1001;
-    -webkit-tap-highlight-color: transparent; 
+    -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
@@ -399,7 +457,7 @@ body.menu-open {
 /* ハンバーガーメニューのアニメーション */
 .hamburger:hover span {
     background: var(--secondary-light);
-    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3); 
+    box-shadow: 0 5px 15px rgba(177, 143, 255, 0.3);
 }
 
 .hamburger.active span:nth-child(1) {
@@ -476,7 +534,7 @@ body.menu-open {
 }
 
 .hero-logo.reveal {
-    animation: logoReveal 5s ease forwards;
+    animation: logoReveal 2.5s ease forwards;
 }
 
 @keyframes logoReveal {
@@ -692,7 +750,7 @@ body.menu-open {
     backdrop-filter: blur(12px);
     height: 140px;
     overflow-y: scroll;
-    border: 1px solid rgba(255, 255, 255, 0.08);  
+    border: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;     /* 位置の基準点を設定 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 控えめな影 */
     transition: all 0.3s ease;  /* ホバー効果用 */
@@ -777,7 +835,7 @@ body.menu-open {
 }
 
 .news-item .news-text a:hover {
-    color: var(--secondary-light);  
+    color: var(--secondary-light);
 }
 
 .news-text a:visited,
@@ -900,7 +958,7 @@ body.menu-open {
 .area-text {
     height: 50%;
     padding: 2rem;
-    background: var(--gradient-purple-0deg); 
+    background: var(--gradient-purple-0deg);
     color: white;
 }
 
@@ -940,7 +998,7 @@ body.menu-open {
     flex-direction: column; /* 縦方向に配置 */
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;  
+    transition: all 0.3s ease;
 }
 
 .lineup-announcement {
@@ -953,7 +1011,7 @@ body.menu-open {
     overflow: hidden;
     opacity: 0;
     transform: translateY(100px);
-    transition: 
+    transition:
         opacity 0.6s ease,
         transform 0.6s ease;
 }
@@ -1099,7 +1157,7 @@ body.menu-open {
 .ticket-announcement {
     opacity: 0;
     transform: translateY(100px);
-    transition: 
+    transition:
         opacity 0.6s ease,
         transform 0.6s ease;
     text-align: center;
@@ -1472,7 +1530,7 @@ body.menu-open {
 .scroll-fade-up {
     opacity: 0;
     transform: translateY(100px);
-    transition: 
+    transition:
         opacity 0.6s ease,
         transform 0.6s ease;
 }
@@ -1641,7 +1699,7 @@ body.menu-open {
 .news-text h3 {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
-    color: white; 
+    color: white;
 }
 
 .news-text p,
@@ -2048,7 +2106,7 @@ body.artist-page {
 .artist-reveal-photo .scroll-fade-up {
     opacity: 0;
     transform: translateY(50px);
-    transition: 
+    transition:
         opacity 0.6s ease-out,
         transform 0.6s ease-out;
 }
@@ -2066,6 +2124,7 @@ body.artist-page {
 .artist-row {
     display: flex;
     justify-content: center;
+    margin: 0;
     /* gap: 1rem; */
 }
 
@@ -2273,13 +2332,21 @@ body.artist-page {
 
     .nav-logo {
         left: 0.5rem;
+        z-index: 1001;
     }
 
     .nav-logo-img {
         width: 100px;
     }
 
+    .nav-pc-menu {
+        padding-bottom: 2rem;
+    }
+
     .nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
         gap: 1rem;
     }
 
@@ -2293,6 +2360,7 @@ body.artist-page {
 
     .nav-right {
         gap: 0;
+        z-index: 1001;
     }
 
     /* チケットボタン */
@@ -2336,11 +2404,11 @@ body.artist-page {
         position: relative;
         top: -2vh;
     }
-    
+
     .hero-logo.reveal {
-        animation: logoReveal 3s ease forwards;
+        animation: logoReveal 1.5s ease forwards;
     }
-    
+
 
     @keyframes logoReveal {
         to {
@@ -2359,12 +2427,12 @@ body.artist-page {
         margin-top: -8rem;
         margin-bottom: 10rem;
         position: relative;
-        top: 2vh; 
+        top: 2vh;
     }
 
     .hero-info {
         position: relative;
-        top: 0; 
+        top: 0;
         margin-top: -1.5rem;
     }
 
@@ -2375,12 +2443,6 @@ body.artist-page {
 
     .hero .location {
         font-size: 1rem;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem;
     }
 
     .about {
@@ -2409,7 +2471,7 @@ body.artist-page {
         gap: 2rem;
         margin-top: 2rem;
     }
-    
+
     .feature-item {
         width: 100%;  /* 親要素いっぱいに */
         margin: 0 auto;  /* 中央寄せ */
@@ -2440,7 +2502,7 @@ body.artist-page {
     .area-item {
         height: 400px;  /* 固定の高さ */
     }
-    
+
     .area-item .image-container {
         height: 50%;
     }
@@ -2451,12 +2513,12 @@ body.artist-page {
         overflow-y: auto;  /* 縦方向にスクロール可能 */
         -webkit-overflow-scrolling: touch;  /* iOSでのスムーズスクロール */
     }
-    
+
     .area-text h3 {
         font-size: 1.5rem;
         margin-bottom: 0.8rem;
     }
-    
+
     .area-text p {
         font-size: 0.95rem;
         line-height: 1.8;
@@ -2529,7 +2591,7 @@ body.artist-page {
     .transport-options {
         gap: 1rem;
     }
-    
+
     .venue-info {
         padding: 2rem;
         width: 90%;
@@ -2576,7 +2638,7 @@ body.artist-page {
         display: block;  /* 改行して表示 */
         margin-top: 0.1rem;  /* 上部との間隔 */
         margin-left: 0;  /* 左マージンをリセット */
-    } 
+    }
 
     /* 特設Newsページ */
     .news-content {
@@ -2603,7 +2665,7 @@ body.artist-page {
     .artist-reveal-photo img {
         width: 100%;
         height: auto;
-        transform: scale(1.2); /* 画像を0.9倍にスケール */
+        transform: scale(1.484);
         object-fit: contain; /* 画像全体を表示し、余白に黒い帯を入れる */
     }
 
