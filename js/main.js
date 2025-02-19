@@ -43,7 +43,7 @@ function smoothScroll(targetElement) {
             }
         });
     }, {
-        threshold: 0.2  // 要素が10%見えたら発火
+        threshold: 0.2  // 要素が20%見えたら発火
     });
 
     scrollElements.forEach(element => {
@@ -59,35 +59,49 @@ function smoothScroll(targetElement) {
 
    // メニュー関連の処理（これらは条件付きで実行）
   const hamburger = document.querySelector('.hamburger');
+  const menuContainer = document.querySelector('.nav-menu-container');
   const nav = document.querySelector('.nav-pc-menu');
   const body = document.body;
 
   // 要素チェック
-  if (hamburger && nav) {  // 要素が存在する場合のみ実行
+  if (hamburger && menuContainer && nav) {  // 要素が存在する場合のみ実行
     // トランジションの監視（デバッグ用に残す）
-    nav.addEventListener('transitionstart', (e) => {
+    // nav.addEventListener('transitionstart', (e) => {
+    //     console.log('Transition start:', e.propertyName);
+    // });
+
+    // nav.addEventListener('transitionend', (e) => {
+    //     console.log('Transition end:', e.propertyName);
+    // });
+
+    menuContainer.addEventListener('transitionstart', (e) => {
         console.log('Transition start:', e.propertyName);
     });
 
-    nav.addEventListener('transitionend', (e) => {
+    menuContainer.addEventListener('transitionend', (e) => {
         console.log('Transition end:', e.propertyName);
     });
-
   }
 
   // メニュー開閉の処理をひとつの関数にまとめる
   function toggleMenu(show) {
       const action = show ? 'add' : 'remove';
       hamburger.classList[action]('active');
-      nav.classList[action]('active');
+      menuContainer.classList[action]('active'); // containerのクラス制御
+      nav.classList[action]('active');          // navのクラス制御も必要
       body.classList[action]('menu-open');
   }
 
   // ハンバーガーメニューのクリックイベント
-  hamburger.addEventListener('click', () => {
-      const isOpening = !nav.classList.contains('active');
-      toggleMenu(isOpening);
-  });
+//   hamburger.addEventListener('click', () => {
+//       const isOpening = !nav.classList.contains('active');
+//       toggleMenu(isOpening);
+//   });
+
+    hamburger.addEventListener('click', () => {
+        const isOpening = !menuContainer.classList.contains('active');
+        toggleMenu(isOpening);
+    });
 
   const ticketButton = document.querySelector('.hero-buttons .btn-primary');
   if (ticketButton) {
@@ -101,10 +115,38 @@ function smoothScroll(targetElement) {
 }
 
   // メニューリンクのクリックイベント
-  nav.querySelectorAll('a').forEach(link => {
+//   nav.querySelectorAll('a').forEach(link => {
+//     link.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const targetId = link.getAttribute('href');
+//         const targetElement = document.querySelector(targetId);
+
+//         console.log('Link clicked:', targetId);
+//         console.log('Target element:', targetElement);
+
+//         if (targetElement) {
+//             smoothScroll(targetElement);
+//             toggleMenu(false);
+//         } else {
+//             console.error('Target element not found:', targetId);
+//         }
+        
+//         smoothScroll(targetElement);
+//         toggleMenu(false);
+//     });
+// });
+
+// メニューリンクのクリックイベント
+nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const targetId = link.getAttribute('href');
+
+        // 外部リンクや相対パスの場合はそのままリンクを開く
+        if (targetId.startsWith('http') || targetId.startsWith('../')) {
+            return; // デフォルトのリンク動作を許可
+        }
+
+        e.preventDefault();
         const targetElement = document.querySelector(targetId);
 
         console.log('Link clicked:', targetId);
@@ -116,9 +158,6 @@ function smoothScroll(targetElement) {
         } else {
             console.error('Target element not found:', targetId);
         }
-        
-        smoothScroll(targetElement);
-        toggleMenu(false);
     });
 });
 
@@ -178,15 +217,15 @@ if (newsMoreBtn && newsArchive) {
 
         setTimeout(() => {
             heroSubtitle.classList.add('reveal');  // サブタイトルのreveal
-        }, 940);  // ロゴの後、1秒後に表示
+        }, 470);  // ロゴの後、1秒後に表示
         
         setTimeout(() => {
             heroButtons.classList.add('reveal');
-        }, 1000);
+        }, 500);
 
         setTimeout(() => {
             heroInfo.classList.add('reveal');
-        }, 1000);
+        }, 500);
     };
     
     // 背景画像の読み込みを開始
